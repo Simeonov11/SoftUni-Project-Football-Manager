@@ -1,38 +1,44 @@
 {
     "65ba7ab6-1733-4060-b5ee-1b2df28b5271": {
-        "date": "2025/03/26",
-        "startTime": "15:00",
+        "date": "2025-03-23T21:00:00.000Z",
+        "startTime": "21:00",
         "homeTeam": [],
         "awayTeam": [],
         "_id": "65ba7ab6-1733-4060-b5ee-1b2df28b5271"
     },
     "2c4d4ece-d797-4ae1-a5ac-2cb5b5457e00": {
-        "date": "2025/03/26",
+        "date": "2025-03-24T17:00:00.000Z",
         "startTime": "17:00",
         "homeTeam": [],
         "awayTeam": [],
         "_id": "2c4d4ece-d797-4ae1-a5ac-2cb5b5457e00"
     },
     "c945ec87-07b5-4fe0-a289-7976c5954a8d": {
-        "date": "2025/03/27",
+        "date": "2025-03-26T13:00:00.000Z",
         "startTime": "13:00",
         "homeTeam": [],
         "awayTeam": [],
         "_id": "c945ec87-07b5-4fe0-a289-7976c5954a8d"
     },
     "97941351-a709-494e-81b6-54467082bc3e": {
-        "date": "2025/03/27",
-        "startTime": "16:00",
+        "date": "2025-03-27T15:00:00.000Z",
+        "startTime": "15:00",
         "homeTeam": [],
         "awayTeam": [],
         "_id": "97941351-a709-494e-81b6-54467082bc3e"
     },
     "ac20e0e7-aea3-42be-a4e8-52fac8694924": {
-        "date": "2025/03/26",
-        "startTime": "19:00",
+        "date": "2025-03-27T16:00:00.000Z",
+        "startTime": "16:00",
         "homeTeam": [],
         "awayTeam": [],
         "_id": "ac20e0e7-aea3-42be-a4e8-52fac8694924"
+    },
+    "5d3c78fe-369a-4490-aebc-c34191355878": {
+        "date": "2025-03-27T21:00:00.000Z",
+        "startTime": "21:00",
+        "homeTeam": [],
+        "awayTeam": [],
+        "_id": "5d3c78fe-369a-4490-aebc-c34191355878"
     }
-    
 }
