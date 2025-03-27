@@ -1,18 +1,31 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import matchService from "../../services/matchService.js";
 import { fromIsoDate } from "../../utils/dateTimeUtils.js";
 
 export default function MatchDetails() {
-    const [game, setGame] = useState({});
-    const { gameId } = useParams();
+    const navigate = useNavigate();
+    const [match, setGame] = useState({});
+    const { matchId } = useParams();
 
     useEffect(() => {
-        matchService.getOne(gameId)
+        matchService.getOne(matchId)
             .then(result => {
                 setGame(result);
             })
-    }, [gameId]);
+    }, [matchId]);
+
+    const matchDeleteClickHandler = () => {
+        const hasConfirm = confirm(`Do you want to DELETE the game on ${fromIsoDate(match.date)} starting at ${match.startTime}?`);
+
+        if (!hasConfirm) {
+            return;
+        }
+
+        matchService.delete(matchId);
+
+        navigate('/');
+    };
 
     return (
         <>
@@ -30,8 +43,8 @@ export default function MatchDetails() {
                         </thead>
                         <tbody>
                             <tr>
-                                <td className="w-60 px-5 py-2 text-center">{fromIsoDate(game.date)}</td>
-                                <td className="w-30 px-5 py-2 text-center">{game.startTime}</td>
+                                <td className="w-60 px-5 py-2 text-center">{fromIsoDate(match.date)}</td>
+                                <td className="w-30 px-5 py-2 text-center">{match.startTime}</td>
                                 <td className="w-80 px-5 py-2 text-center">_John Doe</td>
                                 <td className="w-30 px-5 py-2 text-center">_Open</td>
                                 <td className="w-30 px-5 py-2 text-center">_9/10</td>
@@ -51,8 +64,8 @@ export default function MatchDetails() {
                             <div>Player 5</div>
                         </div>
                         <div className="w-50 bg-white mx-auto h-60 p-5">
-                            <div className="text-center m-5"><a href="" className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Edit</a></div>
-                            <div className="text-center m-5"><a href="" className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Delete</a></div>
+                            <div className="text-center m-5"><Link to="" className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-5">Edit</Link></div>
+                            <div className="text-center m-5"><button onClick={matchDeleteClickHandler} className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Delete</button></div>
                         </div>
                         <div className="w-75 bg-white mx-auto h-60 p-5">
                             <div className="text-2xl text-center mb-5">Away Team</div>
@@ -63,7 +76,7 @@ export default function MatchDetails() {
                             <div>Player 5</div>
                         </div>
                     </div>
-                    <div className="w-250  bg-white mx-auto p-5 m-5">Details Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores odio dolorum eligendi sed repudiandae veniam consequatur nulla rem aut illum. Fugiat nesciunt in sed esse necessitatibus culpa eaque, quod ipsa?Details Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores odio dolorum eligendi sed repudiandae veniam consequatur nulla rem aut illum. Fugiat nesciunt in sed esse necessitatibus culpa eaque, quod ipsa?</div>
+                    <div className="w-250  bg-white mx-auto p-5 m-5">{match.details}</div>
                 </div>
             </div>
         </>
