@@ -5,8 +5,6 @@ export default function MatchItem({
     _id,
     date,
     startTime,
-    homeTeam,
-    awayTeam,
 }) {
     return (
         <tr>

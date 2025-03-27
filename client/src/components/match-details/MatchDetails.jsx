@@ -64,7 +64,7 @@ export default function MatchDetails() {
                             <div>Player 5</div>
                         </div>
                         <div className="w-50 bg-white mx-auto h-60 p-5">
-                            <div className="text-center m-5"><Link to="" className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-5">Edit</Link></div>
+                            <div className="text-center m-5"><Link to={`/matches/${matchId}/edit`} className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-5">Edit</Link></div>
                             <div className="text-center m-5"><button onClick={matchDeleteClickHandler} className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Delete</button></div>
                         </div>
                         <div className="w-75 bg-white mx-auto h-60 p-5">

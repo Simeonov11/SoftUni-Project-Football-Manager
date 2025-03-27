@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Edit Match</title>
+</head>
+<body>
+    <header id="header">
+        <nav class="bg-[#c6ff0a]">
+            <ul class="flex justify-center text-xl">
+                <li><a href="#" class="mx-auto flex items-center justify-center px-8 py-3 hover:bg-green-300">Matches</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Create Match</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Players</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Create Player</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Contacts</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">About</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Login</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Register</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+   
+    <main id="main">
+        <div class="bg-[url('./images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover bg-center h-180 pt-5">
+            <div class="content w-7xl bg-white mx-auto text-center h-15 p-5">
+                <form action="">
+                    <label>Date:</label>
+                    <input type="text" name="date" id="date" placeholder="14.13.2025" class="border-1">
+                    <label>Start Time:</label>
+                    <input type="text" name="startTime" id="startTime" placeholder="15:00" class="border-1">
+                    <input type="submit" id="btn" value="Save" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2"></input>
+                </form>
+            </div>
+
+            <div class="w-7xl mx-auto mt-5">
+                <div class="grid grid-cols-3">
+                    <div class="w-75 bg-white mx-auto grid grid-cols-2 p-5">
+                        <div class="text-2xl text-center col-span-2">Home Team</div>
+                        <div class="text-right col-span-2"><a href="" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Add</a></div>
+                        <div>Player 1</div><div class="text-right"><span><a href="" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Remove</a></span></div>
+                        <div>Player 2</div><div class="text-right"><span><a href="" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Remove</a></span></div>
+                        <div>Player 3</div><div class="text-right"><span><a href="" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Remove</a></span></div>
+                        <div>Player 4</div><div class="text-right"><span><a href="" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Remove</a></span></div>
+                        <div>Player 5</div><div class="text-right"><span><a href="" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Remove</a></span></div>
+                    </div>
+                    <div class="w-50 mx-auto h-100">
+                        <div class=""></div>
+                    </div>
+                    <div class="w-75 bg-white mx-auto grid grid-cols-2 p-5">
+                        <div class="text-2xl text-center col-span-2">Away Team</div>
+                        <div class="text-right col-span-2"><a href="" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Add</a></div>
+                        <div>Player 1</div><div class="text-right"><span><a href="" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Remove</a></span></div>
+                        <div>Player 2</div><div class="text-right"><span><a href="" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Remove</a></span></div>
+                        <div>Player 3</div><div class="text-right"><span><a href="" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Remove</a></span></div>
+                        <div>Player 4</div><div class="text-right"><span><a href="" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Remove</a></span></div>
+                        <div>Player 5</div><div class="text-right"><span><a href="" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Remove</a></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer" class="bg-[#c6ff0a] mx-auto text-center px-8 py-3">
+        <p>Football Manager Copyright 2025</p>
+    </footer>
+    
+</body>
+</html>
