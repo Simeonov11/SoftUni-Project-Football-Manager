@@ -6,3 +6,9 @@ export const fromIsoDate = (isoDate) => {
 
     return formattedDate;
 }
+
+export const toDataInput = (isoDate) => {
+    const dateOnly = isoDate.split("T")[0];
+
+    return dateOnly;
+}
