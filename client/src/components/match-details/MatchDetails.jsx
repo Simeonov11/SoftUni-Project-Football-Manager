@@ -63,6 +63,7 @@ export default function MatchDetails() {
                             <div>Player 5</div>
                         </div>
                     </div>
+                    <div className="w-250  bg-white mx-auto p-5 m-5">Details Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores odio dolorum eligendi sed repudiandae veniam consequatur nulla rem aut illum. Fugiat nesciunt in sed esse necessitatibus culpa eaque, quod ipsa?Details Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores odio dolorum eligendi sed repudiandae veniam consequatur nulla rem aut illum. Fugiat nesciunt in sed esse necessitatibus culpa eaque, quod ipsa?</div>
                 </div>
             </div>
         </>
