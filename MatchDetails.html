@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Match Details</title>
+</head>
+<body>
+    <header id="header">
+        <nav class="bg-[#c6ff0a]">
+            <ul class="flex justify-center text-xl">
+                <li><a href="#" class="mx-auto flex items-center justify-center px-8 py-3 hover:bg-green-300">Matches</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Create Match</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Players</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Create Player</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Contacts</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">About</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Login</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Register</a></li>
+                <li><a href="#" class="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+   
+    <main id="main">
+        <div class="bg-[url('./images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover bg-center h-180 pt-5">
+            <div class="content w-7xl bg-white justify-center mx-auto">
+                <table class="table-auto mx-auto">
+                    <thead>
+                      <tr>
+                        <th class="w-25 px-5 py-2">Date</th>
+                        <th class="w-30 px-5 py-2">Start Time</th>
+                        <th class="w-25 px-5 py-2">Owner</th>
+                        <th class="w-25 px-5 py-2">Status</th>
+                        <th class="w-25 px-5 py-2">Players</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="w-30 px-5 py-2 text-center">14.13.2025</td>
+                        <td class="w-30 px-5 py-2 text-center">15:00</td>
+                        <td class="w-30 px-5 py-2 text-center">John Doe</td>
+                        <td class="w-30 px-5 py-2 text-center">Open</td>
+                        <td class="w-30 px-5 py-2 text-center">9/10</td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="w-5xl mx-auto mt-5">
+                <div class="grid grid-cols-3">
+                    <div class="w-75 bg-white mx-auto h-60 p-5">
+                        <div class="text-2xl text-center mb-5">Home Team</div>
+                        <div>Player 1</div>
+                        <div>Player 2</div>
+                        <div>Player 3</div>
+                        <div>Player 4</div>
+                        <div>Player 5</div>
+                    </div>
+                    <div class="w-50 bg-white mx-auto h-60 p-5">
+                        <div class="text-center m-5"><a href="" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Edit</a></div>
+                        <div class="text-center m-5"><a href="" class="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Delete</a></div>
+                    </div>
+                    <div class="w-75 bg-white mx-auto h-60 p-5">
+                        <div class="text-2xl text-center mb-5">Away Team</div>
+                        <div>Player 1</div>
+                        <div>Player 2</div>
+                        <div>Player 3</div>
+                        <div>Player 4</div>
+                        <div>Player 5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer" class="bg-[#c6ff0a] mx-auto text-center px-8 py-3">
+        <p>Football Manager Copyright 2025</p>
+    </footer>
+    
+</body>
+</html>

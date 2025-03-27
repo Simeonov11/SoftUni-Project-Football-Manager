@@ -12,8 +12,6 @@ export default function Matches() {
             })
     }, []);
 
-    console.log(matches);
-
     return (
         <>
             <div className="bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover bg-center h-180 pt-5">
@@ -21,11 +19,11 @@ export default function Matches() {
                     <table className="table-auto">
                         <thead>
                             <tr>
-                                <th className="w-25 px-5 py-2">Date</th>
+                                <th className="w-60 px-5 py-2">Date</th>
                                 <th className="w-30 px-5 py-2">Start Time</th>
-                                <th className="w-25 px-5 py-2">Owner</th>
-                                <th className="w-25 px-5 py-2">Status</th>
-                                <th className="w-25 px-5 py-2">Players</th>
+                                <th className="w-80 px-5 py-2">Owner</th>
+                                <th className="w-30 px-5 py-2">Status</th>
+                                <th className="w-30 px-5 py-2">Players</th>
                             </tr>
                         </thead>
                         <tbody>

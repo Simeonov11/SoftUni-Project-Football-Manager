@@ -11,6 +11,7 @@ import Contacts from './components/contacts/Contacts.jsx'
 import About from './components/about/About.jsx'
 import Login from './components/login/Login.jsx'
 import Register from './components/register/Register.jsx'
+import MatchDetails from './components/match-details/MatchDetails.jsx'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/" element={<Matches />} />
                     <Route path="/players" element={<Players />} />
                     <Route path="/matches/create" element={<MatchCreate />} />
+                    <Route path="/matches/:gameId/details" element={<MatchDetails />} />
                     <Route path="/player/create" element={<PlayerCreate />} />
                     <Route path="/contacts" element={<Contacts />} />
                     <Route path="/about" element={<About />} />
