@@ -33,7 +33,7 @@ function App() {
                     <Route path="/" element={<Matches />} />
                     <Route path="/players" element={<Players />} />
                     <Route path="/matches/create" element={<MatchCreate />} />
-                    <Route path="/matches/:matchId/details" element={<MatchDetails />} />
+                    <Route path="/matches/:matchId/details" element={<MatchDetails email={email} />} />
                     <Route path="/matches/:matchId/edit" element={<MatchEdit />} />
                     <Route path="/players/create" element={<PlayerCreate />} />
                     <Route path="/players/:playerId/details" element={<PlayerDetails />} />
