@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import matchService from "../../services/matchService.js";
 import { fromIsoDate } from "../../utils/dateTimeUtils.js";
+import CommentsShow from "../comments/CommentsShow.jsx";
 
 export default function MatchDetails() {
     const navigate = useNavigate();
@@ -29,7 +30,7 @@ export default function MatchDetails() {
 
     return (
         <>
-            <div className="bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover bg-center h-180 pt-5">
+            <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
                 <div className="content w-7xl bg-white justify-center mx-auto">
                     <table className="table-auto mx-auto">
                         <thead>
@@ -78,6 +79,7 @@ export default function MatchDetails() {
                     </div>
                     <div className="w-250  bg-white mx-auto p-5 m-5">{match.details}</div>
                 </div>
+                <CommentsShow />
             </div>
         </>
     );
