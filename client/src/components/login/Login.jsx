@@ -1,16 +1,23 @@
+import { useActionState } from "react";
 import { Link, useNavigate } from "react-router";
 
 export default function Login({
     onLogin,
 }) {
     const navigate = useNavigate();
-    const loginAction = (formData) => {
-        const email = formData.get('email');
 
-        onLogin(email);
+    const loginHandler = (previousState, formData) => {
+        const values = Object.fromEntries(formData);
 
-        navigate('/');
+        onLogin(values.email);
+
+        // navigate('/');
+
+        return values;
     }
+
+    const [values, loginAction, isPending] = useActionState(loginHandler,{ email: "", password: ""});
+    console.log(values);
 
     return (
         <>
@@ -21,7 +28,7 @@ export default function Login({
                         <input type="text" name="email" id="email" placeholder="John@abv.bg" className="border-1" />
                         <label htmlFor="password">Password:</label>
                         <input type="text" name="password" id="password" placeholder="" className="border-1" />
-                        <input type="submit" id="btn" value="Login" className="bg-[#c6ff0a] hover:bg-green-300 mt-5 py-1 px-1 w-20 mx-auto" />
+                        <input type="submit" id="btn" value="Login" disabled={isPending} className="bg-[#c6ff0a] hover:bg-green-300 mt-5 py-1 px-1 w-20 mx-auto" />
                         <div className="mt-5 text-sm"><Link to="/register" className="py-1 px-5">Not registered yet?</Link></div>
                     </form>
                 </div>
