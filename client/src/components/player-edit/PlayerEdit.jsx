@@ -14,13 +14,19 @@ export default function PlayerEdit() {
             })
     }, [playerId]);
 
+    const formAction = async (formData) => {
+        const playerData = { ...player, ...(Object.fromEntries(formData)) };
 
+        await playerService.edit(playerId, playerData);
+
+        navigate(`/players/${playerId}/details`);
+    }
 
    return (
        <>
         <div className="bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover bg-center h-180 pt-5">
             <div className="content w-md bg-white mx-auto text-center p-5">
-                <form action="" className="flex flex-col w-50 mx-auto">
+                <form action={formAction} className="flex flex-col w-50 mx-auto">
                     <label htmlFor="firstName">First name:</label>
                     <input type="text" name="firstName" id="firstName" defaultValue={player.firstName} placeholder="John" className="border-1" />
                     <label htmlFor="lastName">Last name:</label>
