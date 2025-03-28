@@ -4,18 +4,25 @@ import matchService from "../../services/matchService.js";
 import { fromIsoDate } from "../../utils/dateTimeUtils.js";
 import CommentsShow from "../comments/CommentsShow.jsx";
 import CommentsCreate from "../comments-create/CommentsCreate.jsx";
+import commentService from "../../services/commentService.js";
 
 export default function MatchDetails({
     email,
 }) {
     const navigate = useNavigate();
     const [match, setGame] = useState({});
+    const [comments, setComments] = useState([]);
     const { matchId } = useParams();
 
     useEffect(() => {
         matchService.getOne(matchId)
             .then(result => {
                 setGame(result);
+            })
+
+        commentService.getAll(matchId)
+            .then(result => {
+                setComments(result)
             })
     }, [matchId]);
 
@@ -29,6 +36,10 @@ export default function MatchDetails({
         matchService.delete(matchId);
 
         navigate('/');
+    };
+
+    const commentCreateHandler = (newComment) => {
+        setComments(state => [...state, newComment]);
     };
 
     return (
@@ -82,8 +93,12 @@ export default function MatchDetails({
                     </div>
                     <div className="w-250  bg-white mx-auto p-5 m-5">{match.details}</div>
                 </div>
-                <CommentsCreate email={email} matchId={matchId} />
-                <CommentsShow />
+                <CommentsCreate
+                    email={email}
+                    matchId={matchId}
+                    onCreate={commentCreateHandler}
+                />
+                <CommentsShow comments={comments} />
             </div>
         </>
     );
