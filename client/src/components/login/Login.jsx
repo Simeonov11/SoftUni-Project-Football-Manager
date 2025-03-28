@@ -1,7 +1,7 @@
 export default function Login() {
     return (
         <>
-            <div className="bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover bg-center h-180 pt-5">
+            <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
                 <div className="content w-md bg-white mx-auto text-center p-5">
                     <form action="" className="flex flex-col w-70 mx-auto">
                         <label htmlFor="email">Email:</label>

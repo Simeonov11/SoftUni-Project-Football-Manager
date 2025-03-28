@@ -14,7 +14,7 @@ export default function Matches() {
 
     return (
         <>
-            <div className="bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover bg-center h-180 pt-5">
+            <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
                 <div className="content w-7xl bg-white flex justify-center mx-auto pb-3">
                     <table className="table-auto">
                         <thead>

@@ -28,7 +28,7 @@ export default function MatchEdit() {
 
     return (
         <>
-            <div className="bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover bg-center h-180 pt-5">
+            <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
                 <form id="edit" action={formAction}>
                     <div className="content w-7xl bg-white mx-auto text-center h-15 p-5">
                         <label>Date:</label>

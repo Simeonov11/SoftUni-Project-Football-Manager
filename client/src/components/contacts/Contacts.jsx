@@ -1,7 +1,7 @@
 export default function Contacts() {
     return (
         <>
-            <div className="bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover bg-center h-180 pt-5">
+            <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
                 <div className="content w-2xl bg-white mx-auto text-center p-5">
                     <article>
                         <h1>Contact us on</h1>

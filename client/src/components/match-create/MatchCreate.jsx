@@ -24,7 +24,7 @@ export default function MatchCreate() {
 
     return (
        <>
-            <div className="bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover bg-center h-180 pt-5">
+            <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
                 <div className="contentCreate flex w-7xl bg-white mx-auto text-center justify-center p-5">
                     <form action={submitAction}>
                         <label htmlFor="startTimedate">Date:</label>
