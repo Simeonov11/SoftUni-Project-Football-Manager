@@ -1,0 +1,28 @@
+{
+    "0802fcf9-bc02-4940-81eb-99ed8f19863c": {
+        "firstName": "Anatoly",
+        "lastName": "Petrov",
+        "imageUrl": "/images/ProfilePicture.png",
+        "position": "Attacker",
+        "rating": "4",
+        "age": "15",
+        "height": "160",
+        "weight": "55",
+        "aboutMe": "Hello, i love to play football, let's play",
+        "owner": "_John Doe",
+        "_id": "0802fcf9-bc02-4940-81eb-99ed8f19863c"
+    },
+    "62babfb6-d295-4792-aade-9110f914b520": {
+        "firstName": "Gosho",
+        "lastName": "Goshev",
+        "imageUrl": "https://gratisography.com/wp-content/uploads/2024/10/gratisography-cool-cat-1035x780.jpg",
+        "position": "Defender",
+        "rating": "4.5",
+        "age": "14",
+        "height": "155",
+        "weight": "57",
+        "aboutMe": "I am Gosho, i am new here, i came to make friends",
+        "owner": "_John Doe",
+        "_id": "62babfb6-d295-4792-aade-9110f914b520"
+    }
+}

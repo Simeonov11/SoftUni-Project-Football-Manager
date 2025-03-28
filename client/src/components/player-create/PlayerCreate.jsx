@@ -1,9 +1,24 @@
+import { useNavigate } from "react-router";
+import playerService from "../../services/playerService.js";
+
 export default function PlayerCreate() {
+    const navigate = useNavigate();
+
+    const submitAction = async (formData) => {
+        const playerData = Object.fromEntries(formData);
+        
+        playerData.owner = "_John Doe";
+
+        const result = await playerService.create(playerData);
+        console.log(result);
+        navigate('/players');
+    }
+
     return (
         <>
             <div className="bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover bg-center h-180 pt-5">
                 <div className="content w-md bg-white mx-auto text-center p-5">
-                    <form action="" className="flex flex-col w-50 mx-auto">
+                    <form action={submitAction} className="flex flex-col w-50 mx-auto">
                         <label htmlFor="firstName">First name:</label>
                         <input type="text" name="firstName" id="firstName" placeholder="John" className="border-1" />
                         <label htmlFor="lastName">Last name:</label>
