@@ -46,7 +46,7 @@ export default function PlayerDetails() {
                     </div>
                 </div>
                 <div className="text-center my-2">
-                    <Link to="" className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-5 mx-5">Edit</Link>
+                    <Link to={`/players/${playerId}/edit`} className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-5 mx-5">Edit</Link>
                     <button onClick={playerDeleteClickHandler} className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-3 mx-5">Delete</button>
                 </div>
             </div>
