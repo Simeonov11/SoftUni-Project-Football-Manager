@@ -13,6 +13,7 @@ import Login from './components/login/Login.jsx'
 import Register from './components/register/Register.jsx'
 import MatchDetails from './components/match-details/MatchDetails.jsx'
 import MatchEdit from './components/match-edit/MatchEdit.jsx'
+import PageNotFound404 from './components/page-not-found/PageNotFound404.jsx'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="*" element={<PageNotFound404 />} />
                 </Routes>
             </main>
             <Footer />
