@@ -19,11 +19,10 @@ import PlayerEdit from './components/player-edit/PlayerEdit.jsx'
 import { useState } from 'react'
 
 function App() {
-    const [email, setEmail] = useState();
+    const [authData, setAuthData] = useState({});
 
-    const userLoginHandler = (authData) => {
-        setEmail(authData.email);
-        console.log(authData);
+    const userLoginHandler = (resultData) => {
+        setAuthData(resultData);
     };
 
     return (
@@ -34,7 +33,7 @@ function App() {
                     <Route path="/" element={<Matches />} />
                     <Route path="/players" element={<Players />} />
                     <Route path="/matches/create" element={<MatchCreate />} />
-                    <Route path="/matches/:matchId/details" element={<MatchDetails email={email} />} />
+                    <Route path="/matches/:matchId/details" element={<MatchDetails email={authData.email} />} />
                     <Route path="/matches/:matchId/edit" element={<MatchEdit />} />
                     <Route path="/players/create" element={<PlayerCreate />} />
                     <Route path="/players/:playerId/details" element={<PlayerDetails />} />
