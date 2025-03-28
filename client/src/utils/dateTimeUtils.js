@@ -1,4 +1,7 @@
 export const fromIsoDate = (isoDate) => {
+    if (!isoDate) {
+        return "";
+    }
     const date = new Date(isoDate);
 
     // const formattedDate = date.toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -7,7 +10,11 @@ export const fromIsoDate = (isoDate) => {
     return formattedDate;
 }
 
-export const toDataInput = (isoDate) => {
+export const toDataInput = (isoDate = "") => {
+    if (!isoDate) {
+        return "";
+    }
+
     const dateOnly = isoDate.split("T")[0];
 
     return dateOnly;

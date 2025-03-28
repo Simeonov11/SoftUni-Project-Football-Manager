@@ -17,6 +17,9 @@ export default {
     create(matchData) {
         return request.post(baseUrl, matchData);
     },
+    async edit(matchId, matchData) {
+        return await request.put(`${baseUrl}/${matchId}`, { ...matchData, _id: matchId });
+    },
     async delete(matchId) {
         return await request.delete(`${baseUrl}/${matchId}`);
     }
