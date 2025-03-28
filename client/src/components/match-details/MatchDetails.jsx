@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router";
 import matchService from "../../services/matchService.js";
 import { fromIsoDate } from "../../utils/dateTimeUtils.js";
 import CommentsShow from "../comments/CommentsShow.jsx";
+import CommentsCreate from "../comments-create/CommentsCreate.jsx";
 
 export default function MatchDetails() {
     const navigate = useNavigate();
@@ -79,6 +80,7 @@ export default function MatchDetails() {
                     </div>
                     <div className="w-250  bg-white mx-auto p-5 m-5">{match.details}</div>
                 </div>
+                <CommentsCreate />
                 <CommentsShow />
             </div>
         </>
