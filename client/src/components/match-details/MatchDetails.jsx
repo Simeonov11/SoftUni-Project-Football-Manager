@@ -9,7 +9,7 @@ import useAuth from "../../hooks/useAuth.js";
 
 export default function MatchDetails() {
     const navigate = useNavigate();
-    const { email } = useAuth();
+    const { email, _id: userId } = useAuth();
     const { matchId } = useParams();
     const { match } = useMatch(matchId);
     const [comments, setComments] = useState([]);
@@ -37,6 +37,8 @@ export default function MatchDetails() {
     const commentCreateHandler = (newComment) => {
         setComments(state => [...state, newComment]);
     };
+
+    const isOwner = userId === match._ownerId;
 
     return (
         <>
@@ -75,8 +77,12 @@ export default function MatchDetails() {
                             <div>Player 5</div>
                         </div>
                         <div className="w-50 bg-white mx-auto h-60 p-5">
-                            <div className="text-center m-5"><Link to={`/matches/${matchId}/edit`} className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-5">Edit</Link></div>
-                            <div className="text-center m-5"><button onClick={matchDeleteClickHandler} className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Delete</button></div>
+                            {isOwner && (
+                                <>
+                                <div className="text-center m-5"><Link to={`/matches/${matchId}/edit`} className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-5">Edit</Link></div>
+                                <div className="text-center m-5"><button onClick={matchDeleteClickHandler} className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Delete</button></div>
+                                </>
+                            )}
                         </div>
                         <div className="w-75 bg-white mx-auto h-60 p-5">
                             <div className="text-2xl text-center mb-5">Away Team</div>
