@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router";
-import matchService from "../../services/matchService.js";
+import { useCreateMatch } from "../../api/matchApi.js";
 
 export default function MatchCreate() {
     const navigate = useNavigate();
+    const { create: createMatch } = useCreateMatch();
 
     const submitAction = async (formData) => {
         const matchData = Object.fromEntries(formData);
@@ -17,8 +18,8 @@ export default function MatchCreate() {
         matchData.homeTeam = [];
         matchData.awayTeam = [];
 
-        const result = await matchService.create(matchData);
-        console.log(result);
+        await createMatch(matchData);
+        
         navigate('/');
     };
 
