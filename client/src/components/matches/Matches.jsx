@@ -19,12 +19,11 @@ export default function Matches() {
                             </tr>
                         </thead>
                         <tbody>
-                            {matches.map(match => <MatchItem key={match._id} {...match}/>)}
-
+                            {Array.isArray(matches) && matches.length > 0 ? (matches.map(match => <MatchItem key={match._id} {...match} />)) : null }
                         </tbody>
                     </table>
                 </div>
-                {matches.length === 0 && <div className="notification w-7xl bg-white flex justify-center mx-auto py-3"><h2 className="no-matches">No matches scheduled</h2></div>}
+                {Array.isArray(matches) && matches.length > 0 ? "" : ( <div className="notification w-7xl bg-white flex justify-center mx-auto py-3"><h2 className="no-matches">No matches scheduled</h2></div>) }
             </div>
         </>
     );
