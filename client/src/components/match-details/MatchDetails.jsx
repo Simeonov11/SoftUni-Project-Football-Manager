@@ -6,14 +6,16 @@ import CommentsCreate from "../comments-create/CommentsCreate.jsx";
 import commentService from "../../services/commentService.js";
 import { useDeleteMatch, useMatch } from "../../api/matchApi.js";
 import useAuth from "../../hooks/useAuth.js";
+import { useComments } from "../../api/commentApi.js";
 
 export default function MatchDetails() {
     const navigate = useNavigate();
-    const { email, _id: userId } = useAuth();
+    const { username, _id: userId } = useAuth();
     const { matchId } = useParams();
     const { match } = useMatch(matchId);
     const [comments, setComments] = useState([]);
     const { deleteMatch } = useDeleteMatch();
+    // const { comments } = useComments(matchId);
 
     useEffect(() => {
         commentService.getAll(matchId)
@@ -96,7 +98,7 @@ export default function MatchDetails() {
                     <div className="w-250  bg-white mx-auto p-5 m-5">{match.details}</div>
                 </div>
                 <CommentsCreate
-                    email={email}
+                    username={username}
                     matchId={matchId}
                     onCreate={commentCreateHandler}
                 />
