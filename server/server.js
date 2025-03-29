@@ -1649,7 +1649,40 @@
     			_createdOn: 1616237272948,
     			_updatedOn: 1616237293676
     		}
-    	}
+    	},
+        matches: [
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "date": "2025-03-10T09:00:00.000Z",
+                "startTime": "09:00",
+                "details": "Match 1 - training session",
+                "homeTeam": [],
+                "awayTeam": [],
+                "_createdOn": 1743264359036,
+                "_id": "bf72cd7d-ae55-4b50-ad2d-d345e51d4fe2"
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "date": "2025-03-11",
+                "startTime": "09:00",
+                "details": "Match 2 - Amatior leage junioirs Game 1",
+                "homeTeam": [],
+                "awayTeam": [],
+                "_createdOn": 1743264396575,
+                "_id": "3a47e172-ca29-43e8-ab4c-a68af58c8334",
+                "_updatedOn": 1743264434778
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "date": "2025-03-12T09:00:00.000Z",
+                "startTime": "09:00",
+                "details": "Match 3 - Amatior league juniors Game 2",
+                "homeTeam": [],
+                "awayTeam": [],
+                "_createdOn": 1743264425853,
+                "_id": "6e564812-372f-4476-aa75-1e88a38a393f"
+            }
+        ]
     };
     var rules$1 = {
     	users: {
