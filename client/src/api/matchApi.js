@@ -48,6 +48,29 @@ export const useMatch = (matchId) => {
     };
 }
 
+export const useLatestMatches = () => {
+    const [latestMatches, setLatestMatches] = useState([]);
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams({
+            sortBy: 'date desc',
+        });
+
+        try {
+            request.get(`${baseUrl}?${searchParams.toString()}`)
+                .then(setLatestMatches)
+        } catch (error) {
+            console.log(`No matches found - ${error.message}`);
+            setMatches([]);
+        }
+        
+    }, []);
+
+    return {
+        latestMatches,
+    };    
+};
+
 export const useEditMatch = () => {
     const { request } = useAuth();
 
@@ -69,3 +92,4 @@ export const useDeleteMatch = () => {
         deleteMatch,
     }
 }
+
