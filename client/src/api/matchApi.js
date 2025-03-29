@@ -1,33 +1,15 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import request from "../utils/request.js";
-import { UserContext } from "../contexts/userContext.js";
+import useAuth from "../hooks/useAuth.js";
 
 
 const baseUrl = 'http://localhost:3030/data/matches';
 
-// export default {
-//     async getOne(matchId) {
-//         return await request.get(`${baseUrl}/${matchId}`);
-//     },
-//     async edit(matchId, matchData) {
-//         return await request.put(`${baseUrl}/${matchId}`, { ...matchData, _id: matchId });
-//     },
-//     async delete(matchId) {
-//         return await request.delete(`${baseUrl}/${matchId}`);
-//     }
-// };
-
 export const useCreateMatch = () => {
-    const { accessToken } = useContext(UserContext);
-
-    const options = {
-        headers: {
-            'X-Authorization': accessToken,
-        }
-    };
+    const { request } = useAuth();
 
     const create = (matchData) =>
-        request.post(baseUrl, matchData, options); 
+        request.post(baseUrl, matchData); 
 
     return {
         create,
@@ -58,4 +40,24 @@ export const useMatch = (matchId) => {
     return {
         match,
     };
+}
+
+export const useEditMatch = () => {
+    const { request } = useAuth();
+
+    const edit = (matchId, matchData) =>
+        request.put(`${baseUrl}/${matchId}`, { ...matchData, _id: matchId });
+    
+    return {
+        edit,
+    };
+};
+
+export const useDeleteMatch = () => {
+    const deleteMatch = (matchId) =>
+        request.delete(`${baseUrl}/${matchId}`);
+
+    return {
+        deleteMatch,
+    }
 }
