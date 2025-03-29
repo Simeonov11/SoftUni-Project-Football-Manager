@@ -1,27 +1,17 @@
-import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import matchService from "../../services/matchService.js";
 import { toDataInput } from "../../utils/dateTimeUtils.js";
-
-
+import { useEditMatch, useMatch } from "../../api/matchApi.js";
 
 export default function MatchEdit() {
     const navigate = useNavigate();
     const { matchId } = useParams();
-    const [match, setMatch] = useState({});
+    const { match } = useMatch(matchId);
+    const { edit } = useEditMatch();
 
-    useEffect(() => {
-        matchService.getOne(matchId)
-            .then(result => {
-                setMatch(result);
-            })
-
-    }, [matchId]);
-    
     const formAction = async (formData) => {
         const matchData = { ...match, ...(Object.fromEntries(formData)) };
         
-        await matchService.edit(matchId, matchData);
+        await edit(matchId, matchData)
 
         navigate(`/matches/${matchId}/details`);
     }

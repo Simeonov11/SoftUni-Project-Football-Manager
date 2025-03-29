@@ -1,19 +1,19 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
-import matchService from "../../services/matchService.js";
 import { fromIsoDate } from "../../utils/dateTimeUtils.js";
 import CommentsShow from "../comments/CommentsShow.jsx";
 import CommentsCreate from "../comments-create/CommentsCreate.jsx";
 import commentService from "../../services/commentService.js";
-import { UserContext } from "../../contexts/userContext.js";
-import { useMatch } from "../../api/matchApi.js";
+import { useDeleteMatch, useMatch } from "../../api/matchApi.js";
+import useAuth from "../../hooks/useAuth.js";
 
 export default function MatchDetails() {
     const navigate = useNavigate();
-    const { email } = useContext(UserContext);
+    const { email } = useAuth();
     const { matchId } = useParams();
     const { match } = useMatch(matchId);
     const [comments, setComments] = useState([]);
+    const { deleteMatch } = useDeleteMatch();
 
     useEffect(() => {
         commentService.getAll(matchId)
@@ -22,14 +22,14 @@ export default function MatchDetails() {
             })
     }, [matchId]);
 
-    const matchDeleteClickHandler = () => {
+    const matchDeleteClickHandler = async () => {
         const hasConfirm = confirm(`Do you want to DELETE the game on ${fromIsoDate(match.date)} starting at ${match.startTime}?`);
 
         if (!hasConfirm) {
             return;
         }
 
-        matchService.delete(matchId);
+        await deleteMatch(matchId);
 
         navigate('/');
     };
