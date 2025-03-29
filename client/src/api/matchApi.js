@@ -20,8 +20,14 @@ export const useMatches = () => {
     const [matches, setMatches] = useState([]);
 
     useEffect(() => {
-        request.get(baseUrl)
-            .then(setMatches)
+        try {
+            request.get(baseUrl)
+                .then(setMatches)
+        } catch (error) {
+            console.log(`No matches found - ${error.message}`);
+            setMatches([]);
+        }
+        
     }, []);
 
     return {
@@ -54,6 +60,8 @@ export const useEditMatch = () => {
 };
 
 export const useDeleteMatch = () => {
+    const { request } = useAuth();
+
     const deleteMatch = (matchId) =>
         request.delete(`${baseUrl}/${matchId}`);
 
