@@ -6,20 +6,16 @@ import CommentsShow from "../comments/CommentsShow.jsx";
 import CommentsCreate from "../comments-create/CommentsCreate.jsx";
 import commentService from "../../services/commentService.js";
 import { UserContext } from "../../contexts/userContext.js";
+import { useMatch } from "../../api/matchApi.js";
 
 export default function MatchDetails() {
     const navigate = useNavigate();
     const { email } = useContext(UserContext);
-    const [match, setGame] = useState({});
-    const [comments, setComments] = useState([]);
     const { matchId } = useParams();
+    const { match } = useMatch(matchId);
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        matchService.getOne(matchId)
-            .then(result => {
-                setGame(result);
-            })
-
         commentService.getAll(matchId)
             .then(result => {
                 setComments(result)
