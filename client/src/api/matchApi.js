@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import request from "../utils/request.js";
 import { UserContext } from "../contexts/userContext.js";
 
@@ -42,4 +42,17 @@ export const useCreateMatch = () => {
     return {
         create,
     }
+}
+
+export const useMatches = () => {
+    const [matches, setMatches] = useState([]);
+
+    useEffect(() => {
+        request.get(baseUrl)
+            .then(setMatches)
+    }, []);
+
+    return {
+        matches,
+    };
 }

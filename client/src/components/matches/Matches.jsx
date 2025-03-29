@@ -1,16 +1,8 @@
-import { useEffect, useState } from "react";
-import matchService from "../../services/matchService.js";
 import MatchItem from "./match-item/MatchItem.jsx";
+import { useMatches } from "../../api/matchApi.js";
 
 export default function Matches() {
-    const [matches, setMatches] = useState([]);
-
-    useEffect(() => {
-        matchService.getAll()
-            .then(result => {
-                setMatches(result);
-            })
-    }, []);
+    const { matches } = useMatches();
 
     return (
         <>
