@@ -18,6 +18,7 @@ import MatchEdit from './components/match-edit/MatchEdit.jsx'
 import PageNotFound404 from './components/page-not-found/PageNotFound404.jsx'
 import PlayerDetails from './components/player-details/PlayerDetails.jsx'
 import PlayerEdit from './components/player-edit/PlayerEdit.jsx'
+import Logout from './components/logout/Logout.jsx'
 
 function App() {
     const [authData, setAuthData] = useState({});
@@ -44,6 +45,7 @@ function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
+                        <Route path="/logout" element={<Logout />} />
                         <Route path="*" element={<PageNotFound404 />} />
                     </Routes>
                 </main>
