@@ -23,7 +23,7 @@ export default function Matches() {
                     <div className="p-2 text-center">
                         <label htmlFor="sortBy">Sort By:</label>
 
-                        <select id="sortBy" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                        <select id="sortBy" defaultValue={sortBy} onChange={(e) => setSortBy(e.target.value)}>
                             <option value="">--option--</option>
                             <option value="createdBy" selected>CreatedBy</option>
                             <option value="date">Date</option>
