@@ -61,7 +61,7 @@ export const useLatestMatches = () => {
                 .then(setLatestMatches)
         } catch (error) {
             console.log(`No matches found - ${error.message}`);
-            setMatches([]);
+            setLatestMatches([]);
         }
         
     }, []);
