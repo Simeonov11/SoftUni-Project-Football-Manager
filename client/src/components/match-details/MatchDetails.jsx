@@ -70,15 +70,25 @@ export default function MatchDetails() {
 
                 <div className="w-5xl mx-auto mt-5">
                     <div className="grid grid-cols-3">
-                        <div className="w-75 bg-white mx-auto h-60 p-5">
-                            <div className="text-2xl text-center mb-5">Home Team</div>
-                            <div>Player 1</div>
-                            <div>Player 2</div>
-                            <div>Player 3</div>
-                            <div>Player 4</div>
-                            <div>Player 5</div>
+                        <div className="bg-white mx-auto p-5 w-full max-w-md">
+                            <ul className="text-2xl text-center mb-5 flex items-center justify-between">
+                                <span>Home Team</span>
+                                {isOwner && (
+                                    <button className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Add</button>
+                                )}
+                            </ul>
+                            <ul className="list-none space-y-2">
+                                {["Player 1", "Player 2", "Player 3", "Player 4", "Player 5"].map((player, index) => (
+                                    <li key={index} className="flex items-center justify-between py-2 px-4 bg-gray-100 rounded-lg">
+                                        <span>{player}</span>
+                                        {isOwner && (
+                                            <button className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Remove</button>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
-                        <div className="w-50 bg-white mx-auto h-60 p-5">
+                        <div className="w-50 bg-white mx-auto p-5">
                             {isOwner && (
                                 <>
                                 <div className="text-center m-5"><Link to={`/matches/${matchId}/edit`} className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-5">Edit</Link></div>
@@ -86,13 +96,25 @@ export default function MatchDetails() {
                                 </>
                             )}
                         </div>
-                        <div className="w-75 bg-white mx-auto h-60 p-5">
-                            <div className="text-2xl text-center mb-5">Away Team</div>
-                            <div>Player 1</div>
-                            <div>Player 2</div>
-                            <div>Player 3</div>
-                            <div>Player 4</div>
-                            <div>Player 5</div>
+                        <div className="bg-white mx-auto p-5 w-full max-w-md">
+                            <ul className="text-2xl text-center mb-5 flex items-center justify-between">
+                                <span>Away Team</span>
+                                {isOwner && (
+                                    <>
+                                    <button className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Add</button>
+                                    </>
+                                )}
+                            </ul>
+                            <ul className="list-none space-y-2">
+                                {["Player 1", "Player 2", "Player 3", "Player 4", "Player 5"].map((player, index) => (
+                                    <li key={index} className="flex items-center justify-between py-2 px-4 bg-gray-100 rounded-lg">
+                                        <span>{player}</span>
+                                        {isOwner && (
+                                            <button className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Remove</button>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
                     <div className="w-250  bg-white mx-auto p-5 m-5">{match.details}</div>
@@ -107,3 +129,12 @@ export default function MatchDetails() {
         </>
     );
 }
+
+{/* <div className="grid auto-rows-max grid-flow-rows bg-white list-none mx-auto p-5">
+        <ul className="text-2xl text-center mb-5">Home Team<button onClick="" className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3 ml-5">Add</button></ul>
+        <li className=" py-1 px-3 mx-5">Player 1<span><button onClick="" className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3 mxl5">Add</button></span></li>
+        <li className=" py-1 px-3 mx-5">Player 2<span><button onClick="" className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3 mxl5">Add</button></span></li>
+        <li className=" py-1 px-3 mx-5">Player 3<span><button onClick="" className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3 mxl5">Add</button></span></li>
+        <li className=" py-1 px-3 mx-5">Player 4<span><button onClick="" className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3 mxl5">Add</button></span></li>
+        <li className=" py-1 px-3 mx-5">Player 5<span><button onClick="" className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3 mxl5">Add</button></span></li>
+    </div> */}
