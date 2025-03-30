@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router";
 import { useCreateMatch } from "../../api/matchApi.js";
+import useAuth from "../../hooks/useAuth.js";
 
 export default function MatchCreate() {
     const navigate = useNavigate();
     const { create: createMatch } = useCreateMatch();
+    const { username } = useAuth();
 
     const submitAction = async (formData) => {
         const matchData = Object.fromEntries(formData);
@@ -13,7 +15,10 @@ export default function MatchCreate() {
         
         matchData.date.setUTCHours(hours);
         console.log(matchData);
-    
+        
+        matchData._username = username;
+        matchData._status = "Open";
+        matchData._count = 0;
 
         matchData.homeTeam = [];
         matchData.awayTeam = [];

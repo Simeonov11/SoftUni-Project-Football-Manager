@@ -36,7 +36,7 @@ export default function Matches() {
                             <tr>
                                 <th className="w-60 px-5 py-2">Date</th>
                                 <th className="w-30 px-5 py-2">Start Time</th>
-                                <th className="w-80 px-5 py-2">Owner</th>
+                                <th className="w-80 px-5 py-2">Username</th>
                                 <th className="w-30 px-5 py-2">Status</th>
                                 <th className="w-30 px-5 py-2">Players</th>
                             </tr>

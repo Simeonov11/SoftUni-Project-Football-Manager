@@ -51,7 +51,7 @@ export default function MatchDetails() {
                             <tr>
                                 <th className="w-60 px-5 py-2">Date</th>
                                 <th className="w-30 px-5 py-2">Start Time</th>
-                                <th className="w-80 px-5 py-2">Owner</th>
+                                <th className="w-80 px-5 py-2">Username</th>
                                 <th className="w-30 px-5 py-2">Status</th>
                                 <th className="w-30 px-5 py-2">Players</th>
                             </tr>
@@ -60,9 +60,9 @@ export default function MatchDetails() {
                             <tr>
                                 <td className="w-60 px-5 py-2 text-center">{fromIsoDate(match.date)}</td>
                                 <td className="w-30 px-5 py-2 text-center">{match.startTime}</td>
-                                <td className="w-80 px-5 py-2 text-center">_John Doe</td>
-                                <td className="w-30 px-5 py-2 text-center">_Open</td>
-                                <td className="w-30 px-5 py-2 text-center">_9/10</td>
+                                <td className="w-80 px-5 py-2 text-center">{match._username}</td>
+                                <td className="w-30 px-5 py-2 text-center">{match._status}</td>
+                                <td className="w-30 px-5 py-2 text-center">{match._count}/10</td>
                             </tr>
                         </tbody>
                     </table>

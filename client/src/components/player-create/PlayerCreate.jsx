@@ -1,13 +1,16 @@
 import { useNavigate } from "react-router";
 import playerService from "../../services/playerService.js";
+import useAuth from "../../hooks/useAuth.js";
 
 export default function PlayerCreate() {
     const navigate = useNavigate();
+    const { userId, username } = useAuth();
 
     const submitAction = async (formData) => {
         const playerData = Object.fromEntries(formData);
         
-        playerData.owner = "_John Doe";
+        playerData._ownerId = userId;
+        playerData._username = username;
 
         const result = await playerService.create(playerData);
         console.log(result);
