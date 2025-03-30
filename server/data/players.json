@@ -9,7 +9,8 @@
         "height": "170",
         "weight": "65",
         "aboutMe": "I love scoring goals and dribbling past defenders!",
-        "owner": "_John Doe",
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_username": "Admin",
         "_id": "a802fcf9-bc02-4940-91eb-99ed8f19863c"
     },
     "62babfb6-d295-4792-bade-9110f914b520": {
@@ -22,7 +23,8 @@
         "height": "155",
         "weight": "57",
         "aboutMe": "I am Gosho, I am new here and want to make friends!",
-        "owner": "_John Doe",
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_username": "Admin",
         "_id": "62babfb6-d295-4792-bade-9110f914b520"
     },
     "5a9c7d8e-bc92-4f21-81eb-99ed8f19863c": {
@@ -35,7 +37,8 @@
         "height": "172",
         "weight": "67",
         "aboutMe": "Speed and power help me score amazing goals!",
-        "owner": "_John Doe",
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_username": "Admin",
         "_id": "5a9c7d8e-bc92-4f21-81eb-99ed8f19863c"
     },
     "73e1bf99-bd12-4390-9ebc-11ed8f19863a": {
@@ -48,7 +51,8 @@
         "height": "165",
         "weight": "60",
         "aboutMe": "I love making passes and helping my team win!",
-        "owner": "_John Doe",
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_username": "Admin",
         "_id": "73e1bf99-bd12-4390-9ebc-11ed8f19863a"
     },
     "4802fcf9-cc02-4940-81eb-92ed8f19863c": {
@@ -61,7 +65,8 @@
         "height": "175",
         "weight": "70",
         "aboutMe": "I love tackling and stopping attackers!",
-        "owner": "_John Doe",
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_username": "Admin",
         "_id": "4802fcf9-cc02-4940-81eb-92ed8f19863c"
     },
     "32e4bcf9-cd12-4140-83eb-98ed8f19863d": {
@@ -74,7 +79,8 @@
         "height": "160",
         "weight": "58",
         "aboutMe": "Running and passing are my best skills!",
-        "owner": "_John Doe",
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_username": "Admin",
         "_id": "32e4bcf9-cd12-4140-83eb-98ed8f19863d"
     },
     "92f5bcb6-a395-4792-aade-9110f915b521": {
@@ -87,7 +93,8 @@
         "height": "168",
         "weight": "62",
         "aboutMe": "I never give up and fight for every goal!",
-        "owner": "_John Doe",
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_username": "Admin",
         "_id": "92f5bcb6-a395-4792-aade-9110f915b521"
     },
     "49bcbfa6-c295-4792-aabe-9110f914b522": {
@@ -100,7 +107,8 @@
         "height": "158",
         "weight": "56",
         "aboutMe": "I love defending and making big clearances!",
-        "owner": "_John Doe",
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_username": "Admin",
         "_id": "49bcbfa6-c295-4792-aabe-9110f914b522"
     },
     "19a2fcf9-bb02-4840-81eb-99ed8f19963c": {
@@ -113,7 +121,8 @@
         "height": "174",
         "weight": "69",
         "aboutMe": "I control the game and love assisting my teammates!",
-        "owner": "_John Doe",
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_username": "Admin",
         "_id": "19a2fcf9-bb02-4840-81eb-99ed8f19963c"
     },
     "b802fcf9-bc02-4940-81eb-99ed8f19863b": {
@@ -126,7 +135,36 @@
         "height": "162",
         "weight": "59",
         "aboutMe": "Dribbling and shooting are my favorite!",
-        "owner": "_John Doe",
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_username": "Admin",
         "_id": "b802fcf9-bc02-4940-81eb-99ed8f19863b"
+    },
+    "5e8ce868-a1a6-4d5d-bbad-98eae3bd5731": {
+        "firstName": "Toni",
+        "lastName": "Storaro",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa5Kj2El4H1_8V_et62HxRD06g9ltSDjgGYA&s",
+        "position": "Defender",
+        "rating": "8.4",
+        "age": "38",
+        "height": "180",
+        "weight": "97",
+        "aboutMe": "I love to sing !!!",
+        "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+        "_username": "Peter",
+        "_id": "5e8ce868-a1a6-4d5d-bbad-98eae3bd5731"
+    },
+    "47b99dfb-bae5-4016-92d7-997488d5938d": {
+        "firstName": "Sofi",
+        "lastName": "Marinova",
+        "imageUrl": "https://resources.tidal.com/images/05ba284f/7820/4eb0/b19e/5e3a1ee70ab3/750x750.jpg",
+        "position": "Midfield",
+        "rating": "6.9",
+        "age": "38",
+        "height": "160",
+        "weight": "60",
+        "aboutMe": "I love to sing and dance",
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "_username": "Admin",
+        "_id": "47b99dfb-bae5-4016-92d7-997488d5938d"
     }
 }

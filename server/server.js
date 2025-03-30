@@ -1656,16 +1656,22 @@
                 "date": "2025-03-10T09:00:00.000Z",
                 "startTime": "09:00",
                 "details": "Match 1 - training session",
+                "_username": "Admin",
+                "_status": "Open",
+                "_count": "0",
                 "homeTeam": [],
                 "awayTeam": [],
                 "_createdOn": 1743264359036,
                 "_id": "bf72cd7d-ae55-4b50-ad2d-d345e51d4fe2"
             },
             {
-                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "date": "2025-03-11",
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "date": "2025-03-11T09:00:00.000Z",
                 "startTime": "09:00",
                 "details": "Match 2 - Amatior leage junioirs Game 1",
+                "_username": "George",
+                "_status": "Open",
+                "_count": "0",
                 "homeTeam": [],
                 "awayTeam": [],
                 "_createdOn": 1743264396575,
@@ -1677,10 +1683,26 @@
                 "date": "2025-03-12T09:00:00.000Z",
                 "startTime": "09:00",
                 "details": "Match 3 - Amatior league juniors Game 2",
+                "_username": "Admin",
+                "_status": "Open",
+                "_count": "0",
                 "homeTeam": [],
                 "awayTeam": [],
                 "_createdOn": 1743264425853,
                 "_id": "6e564812-372f-4476-aa75-1e88a38a393f"
+            },
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "date": "2025-04-02T14:00:00.000Z",
+                "startTime": "14:00",
+                "details": "Big Game Hunter !!!",
+                "_username": "Peter",
+                "_status": "Open",
+                "_count": "0",
+                "homeTeam": [],
+                "awayTeam": [],
+                "_createdOn": 1743345505523,
+                "_id": "0494158c-f7b8-4d4d-8dd7-b7adc49f5626"
             }
         ]
     };
