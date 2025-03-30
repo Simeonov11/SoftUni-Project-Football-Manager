@@ -1,8 +1,10 @@
-import { useNavigate, useParams } from "react-router";
+import { Navigate, useNavigate, useParams } from "react-router";
 import { toDataInput } from "../../utils/dateTimeUtils.js";
 import { useEditMatch, useMatch } from "../../api/matchApi.js";
+import useAuth from "../../hooks/useAuth.js";
 
 export default function MatchEdit() {
+    const { userId } = useAuth();
     const navigate = useNavigate();
     const { matchId } = useParams();
     const { match } = useMatch(matchId);
@@ -14,6 +16,11 @@ export default function MatchEdit() {
         await edit(matchId, matchData)
 
         navigate(`/matches/${matchId}/details`);
+    }
+
+    const isOwner = userId === match._ownerId;
+    if (!isOwner) {
+        return <Navigate to="/" />
     }
 
     return (
