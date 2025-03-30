@@ -1,6 +1,5 @@
 import './App.css'
 import { Routes, Route } from 'react-router'
-import { useState } from 'react'
 import { UserContext } from './contexts/userContext.js'
 
 import Footer from './components/footer/Footer.jsx'
@@ -19,9 +18,10 @@ import PageNotFound404 from './components/page-not-found/PageNotFound404.jsx'
 import PlayerDetails from './components/player-details/PlayerDetails.jsx'
 import PlayerEdit from './components/player-edit/PlayerEdit.jsx'
 import Logout from './components/logout/Logout.jsx'
+import usePersistedState from './hooks/usePersistedState.js'
 
 function App() {
-    const [authData, setAuthData] = useState({});
+    const [authData, setAuthData] = usePersistedState('auth', {});
 
     const userLoginHandler = (resultData) => {
         setAuthData(resultData);
