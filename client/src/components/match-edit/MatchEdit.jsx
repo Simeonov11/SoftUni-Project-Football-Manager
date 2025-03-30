@@ -1,7 +1,8 @@
-import { Navigate, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { toDataInput } from "../../utils/dateTimeUtils.js";
 import { useEditMatch, useMatch } from "../../api/matchApi.js";
 import useAuth from "../../hooks/useAuth.js";
+import useIfOwner from "../../hooks/useIfOwner.js";
 
 export default function MatchEdit() {
     const { userId } = useAuth();
@@ -9,6 +10,7 @@ export default function MatchEdit() {
     const { matchId } = useParams();
     const { match } = useMatch(matchId);
     const { edit } = useEditMatch();
+    const { checkIfOwner } = useIfOwner();
 
     const formAction = async (formData) => {
         const matchData = { ...match, ...(Object.fromEntries(formData)) };
@@ -18,11 +20,8 @@ export default function MatchEdit() {
         navigate(`/matches/${matchId}/details`);
     }
 
-    const isOwner = userId === match._ownerId;
-    if (!isOwner) {
-        return <Navigate to="/" />
-    }
-
+    checkIfOwner(userId, match);
+    
     return (
         <>
             <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
