@@ -1,10 +1,10 @@
 
 import { Link } from 'react-router';
-import { useUserContext } from '../../contexts/UserContext';
+import useAuth from '../../hooks/useAuth';
 
 
 export default function Header() {
-    const { email, username } = useUserContext();
+    const {isAuthenticated, username} = useAuth();
 
     return (
         <>
@@ -15,7 +15,7 @@ export default function Header() {
                         <li><Link to="/players" className="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Players</Link></li>
                         <li><Link to="about" className="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">About</Link></li>
                         <li><Link to="contacts" className="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Contacts</Link></li>
-                        {!email
+                        {!isAuthenticated
                             ? (
                                 <>
                                     <li><Link to="login" className="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300">Login</Link></li>
