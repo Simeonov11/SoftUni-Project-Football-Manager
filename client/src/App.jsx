@@ -20,16 +20,16 @@ import PlayerDetails from './components/player-details/PlayerDetails.jsx'
 import PlayerEdit from './components/player-edit/PlayerEdit.jsx'
 import Logout from './components/logout/Logout.jsx'
 import AuthGuard from './components/guards/AuthGuard.jsx'
+import MatchInfoProvider from './components/providers/MatchInfoProvider.jsx'
 
 function App() {
     return (
         <>
             <UserProvider>
+            <MatchInfoProvider>
                 <Header />
                 <main id="main">
                     <Routes>
-                        <Route path="/" element={<Matches />} />
-                        <Route path="/players" element={<Players />} />
                         <Route element={<AuthGuard />}>
                             <Route path="/matches/create" element={<MatchCreate />}/>
                             <Route path="/matches/:matchId/edit" element={<MatchEdit />} />
@@ -37,6 +37,8 @@ function App() {
                             <Route path="/players/:playerId/edit" element={<PlayerEdit />} />
                             <Route path="/logout" element={<Logout />} />
                         </Route>
+                        <Route path="/" element={<Matches />} />
+                        <Route path="/players" element={<Players />} />
                         <Route path="/matches/:matchId/details" element={<MatchDetails />} />
                         <Route path="/players/:playerId/details" element={<PlayerDetails />} />
                         <Route path="/contacts" element={<Contacts />} />
@@ -47,6 +49,7 @@ function App() {
                     </Routes>
                 </main>
                 <Footer />
+            </MatchInfoProvider>
             </UserProvider>
         </>
     )
