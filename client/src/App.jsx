@@ -1,6 +1,7 @@
 import './App.css'
 import { Routes, Route } from 'react-router'
-import { UserContext } from './contexts/userContext.js'
+
+import UserProvider from './components/providers/UserProvider.jsx'
 
 import Footer from './components/footer/Footer.jsx'
 import Header from './components/header/Header.jsx'
@@ -18,22 +19,11 @@ import PageNotFound404 from './components/page-not-found/PageNotFound404.jsx'
 import PlayerDetails from './components/player-details/PlayerDetails.jsx'
 import PlayerEdit from './components/player-edit/PlayerEdit.jsx'
 import Logout from './components/logout/Logout.jsx'
-import usePersistedState from './hooks/usePersistedState.js'
 
 function App() {
-    const [authData, setAuthData] = usePersistedState('auth', {});
-
-    const userLoginHandler = (resultData) => {
-        setAuthData(resultData);
-    };
-
-    const userLogoutHandler = () => {
-        setAuthData({});
-    }
-
     return (
         <>
-            <UserContext.Provider value={{ ...authData, userLoginHandler, userLogoutHandler }}>
+            <UserProvider>
                 <Header />
                 <main id="main">
                     <Routes>
@@ -54,7 +44,7 @@ function App() {
                     </Routes>
                 </main>
                 <Footer />
-            </UserContext.Provider>
+            </UserProvider>
         </>
     )
 }

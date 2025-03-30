@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { UserContext } from "../contexts/userContext.js";
+import { useUserContext } from "../contexts/UserContext.jsx";
 import request from "../utils/request.js";
 
 export default function useAuth() {
-    const { ...authData } = useContext(UserContext);
+    const { ...authData } = useUserContext();
 
     const requestWrapper = (method, url, data, options={}) => {
         const optionWrapper = {

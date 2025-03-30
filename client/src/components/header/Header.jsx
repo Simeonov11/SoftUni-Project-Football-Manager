@@ -1,10 +1,10 @@
 
-import { useContext } from 'react';
 import { Link } from 'react-router';
-import { UserContext } from '../../contexts/userContext.js';
+import { useUserContext } from '../../contexts/UserContext';
+
 
 export default function Header() {
-    const { email, username } = useContext(UserContext);
+    const { email, username } = useUserContext();
 
     return (
         <>
