@@ -7,6 +7,7 @@ import commentService from "../../services/commentService.js";
 import { useDeleteMatch, useMatch } from "../../api/matchApi.js";
 import useAuth from "../../hooks/useAuth.js";
 import { useComments } from "../../api/commentApi.js";
+import { useMatchInfoContext } from "../../contexts/MatchInfoContext.jsx";
 
 export default function MatchDetails() {
     const navigate = useNavigate();
@@ -16,6 +17,8 @@ export default function MatchDetails() {
     const [comments, setComments] = useState([]);
     const { deleteMatch } = useDeleteMatch();
     // const { comments } = useComments(matchId);
+    const { selectMatch } = useMatchInfoContext();
+
 
     useEffect(() => {
         commentService.getAll(matchId)
@@ -41,6 +44,16 @@ export default function MatchDetails() {
     };
 
     const isOwner = userId === match._ownerId;
+    
+    const SelectMatchHomeTeamClickHandler = () => {
+        selectMatch(matchId, "homeTeam");
+        navigate('/players');
+    };
+
+    const SelectMatchAwayTeamClickHandler = () => {
+        selectMatch(matchId, "awayTeam");
+        navigate('/players');
+    };
 
     return (
         <>
@@ -74,7 +87,7 @@ export default function MatchDetails() {
                             <ul className="text-2xl text-center mb-5 flex items-center justify-between">
                                 <span>Home Team</span>
                                 {isOwner && (
-                                    <button className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Add</button>
+                                    <button onClick={SelectMatchHomeTeamClickHandler} className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Add</button>
                                 )}
                             </ul>
                             <ul className="list-none space-y-2">
@@ -101,7 +114,7 @@ export default function MatchDetails() {
                                 <span>Away Team</span>
                                 {isOwner && (
                                     <>
-                                    <button className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Add</button>
+                                    <button onClick={SelectMatchAwayTeamClickHandler} className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Add</button>
                                     </>
                                 )}
                             </ul>

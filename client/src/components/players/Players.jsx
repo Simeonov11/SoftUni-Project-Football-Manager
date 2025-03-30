@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import playerService from "../../services/playerService.js";
 import PlayerItem from "./player-item/PlayerItem.jsx";
 
+
 export default function Players() {
     const [players, setPlayers] = useState([]);
+    
 
     useEffect(() => {
         playerService.getAll()
