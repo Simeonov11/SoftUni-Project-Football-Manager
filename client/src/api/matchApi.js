@@ -93,3 +93,14 @@ export const useDeleteMatch = () => {
     }
 }
 
+export const usePatchMatch = () => {
+    const { request } = useAuth();
+
+    const patchMatch = (matchId, matchData) =>
+        request.patch(`${baseUrl}/${matchId}`, matchData);
+
+    return {
+        patchMatch,
+    }
+}
+
