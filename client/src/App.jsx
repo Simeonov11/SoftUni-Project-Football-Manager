@@ -21,6 +21,7 @@ import PlayerEdit from './components/player-edit/PlayerEdit.jsx'
 import Logout from './components/logout/Logout.jsx'
 import AuthGuard from './components/guards/AuthGuard.jsx'
 import MatchInfoProvider from './components/providers/MatchInfoProvider.jsx'
+import GuestGuard from './components/guards/GuestGuard.jsx'
 
 function App() {
     return (
@@ -43,8 +44,10 @@ function App() {
                         <Route path="/players/:playerId/details" element={<PlayerDetails />} />
                         <Route path="/contacts" element={<Contacts />} />
                         <Route path="/about" element={<About />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/register" element={<Register />} />
+                        <Route element={<GuestGuard />} >
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/register" element={<Register />} />
+                        </Route>
                         <Route path="*" element={<PageNotFound404 />} />
                     </Routes>
                 </main>
