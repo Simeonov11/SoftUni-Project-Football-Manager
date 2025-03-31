@@ -6,7 +6,7 @@ import CommentsCreate from "../comments-create/CommentsCreate.jsx";
 import commentService from "../../services/commentService.js";
 import { useDeleteMatch, useMatch } from "../../api/matchApi.js";
 import useAuth from "../../hooks/useAuth.js";
-import { useComments } from "../../api/commentApi.js";
+import { useComments, useCreateComment } from "../../api/commentApi.js";
 import { useMatchInfoContext } from "../../contexts/MatchInfoContext.jsx";
 
 export default function MatchDetails() {
@@ -15,8 +15,9 @@ export default function MatchDetails() {
     const { matchId } = useParams();
     const { match } = useMatch(matchId);
     const [comments, setComments] = useState([]);
-    const { deleteMatch } = useDeleteMatch();
     // const { comments } = useComments(matchId);
+    // const { create } = useCreateComment();
+    const { deleteMatch } = useDeleteMatch();
     const { selectMatch } = useMatchInfoContext();
 
 
@@ -39,8 +40,9 @@ export default function MatchDetails() {
         navigate('/');
     };
 
-    const commentCreateHandler = (newComment) => {
+    const commentCreateHandler = async (newComment) => {
         setComments(state => [...state, newComment]);
+        // await create(matchId, newComment);
     };
 
     const isOwner = userId === match._ownerId;

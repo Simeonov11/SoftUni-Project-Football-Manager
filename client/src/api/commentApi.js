@@ -4,14 +4,6 @@ import useAuth from "../hooks/useAuth.js";
 
 const baseUrl = 'http://localhost:3030/data/comments';
 
-// export default {  
-    
-//     create(email, matchId, comment) {
-//         return request.post(baseUrl, {email, matchId, comment});
-//     },
-    
-// };
-
 export const useComments = (matchId) => {
     const { request } = useAuth();
     const [comments, setComments] = useState([]);
@@ -21,11 +13,29 @@ export const useComments = (matchId) => {
             where: `matchId="${matchId}"`
         });
 
-        request.get(`${baseUrl}?${searchParams.toString()}`)
-            .then(setComments)
+        if(matchId) {
+            request.get(`${baseUrl}?${searchParams.toString()}`)
+                .then(setComments)
+        }
     }, [matchId]);
 
     return {
         comments,
     }
 };
+
+export const useCreateComment = () => {
+    const { request } = useAuth();
+
+    const create = (mathcId, comment) => {
+        const commentData = {
+            mathcId,
+            comment,
+        };
+        return request.post(baseUrl, commentData)
+    }
+
+    return {
+        create,
+    }
+}

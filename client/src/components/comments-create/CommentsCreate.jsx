@@ -8,9 +8,10 @@ export default function CommentsCreate({
     const commentAction = async(formData) => {
         const comment = formData.get('comment');
 
-        const createdComment = await commentService.create(username ? username : "Guest", matchId, comment);
+        // const createdComment = await commentService.create(username ? username : "Guest", matchId, comment);
+        // onCreate(createdComment);
 
-        onCreate(createdComment);
+        onCreate(comment);
     }
 
     return (
