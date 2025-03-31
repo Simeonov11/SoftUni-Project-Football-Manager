@@ -8,8 +8,8 @@ export default function CommentsShow({
                     {comments?.length > 0
                         ? comments.map(comment =>(
                             <ul className="text-md text-center mb-2 mx-3">
-                                <li key={comment._id} className="mx-3">
-                                    <span className="font-bold">{comment.email}:</span> {comment.comment}
+                                <li className="mx-3">
+                                    <span key={comment._id} className="font-bold">{comment.email}:</span> {comment.comment}
                                 </li>
                             </ul>
                         ))
