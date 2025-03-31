@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useMatchInfoContext } from "../../../contexts/MatchInfoContext";
 
 export default function PlayerItem({
@@ -9,19 +9,14 @@ export default function PlayerItem({
     position,
     rating,
 }) {
-    const { matchId, team, playerId, playerFirstname, playerLastname, selectPlayer } = useMatchInfoContext();
+    const { matchId, selectPlayer } = useMatchInfoContext();
+    const navigate = useNavigate();
 
-    const SelectPlayerClickHandler = () => {
+    const SelectPlayerClickHandler = async () => {
         selectPlayer(_id, firstName, lastName);
-        
-        // make a reaquest to update the match data.
-
-        // navigate to MatchDetails
+        navigate(`/matches/${matchId}/details`);
     };
     
-    // console.log('From match info provider: ', matchId, team, playerId, playerFirstname, playerLastname);
-
-
     return (
         <div className="bg-[url('/images/bronze.png')] bg-no-repeat bg-contain bg-center w-35 h-50 border-1 text-sm m-7 mx-auto">
             <div className="flex flex-col text-center">

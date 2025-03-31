@@ -24,7 +24,7 @@ export const useMatches = () => {
             request.get(baseUrl)
                 .then(setMatches)
         } catch (error) {
-            console.log(`No matches found - ${error.message}`);
+            console.log(`No matches found - Error fetching match: ${error.message}`);
             setMatches([]);
         }
         
@@ -38,13 +38,22 @@ export const useMatches = () => {
 export const useMatch = (matchId) => {
     const [match, setMatch] = useState({});
 
-    useEffect(() => {
+    const fetchMatch = () => {
+        if (!matchId) return;
+
         request.get(`${baseUrl}/${matchId}`)
             .then(setMatch)
+            .catch(error => console.log(error.message));
+    };
+
+    useEffect(() => {
+        fetchMatch();
+
     }, [matchId]);
 
     return {
         match,
+        fetchMatch,
     };
 }
 
@@ -95,12 +104,21 @@ export const useDeleteMatch = () => {
 
 export const usePatchMatch = () => {
     const { request } = useAuth();
+    const { fetchMatch } = useMatch();
 
-    const patchMatch = (matchId, matchData) =>
-        request.patch(`${baseUrl}/${matchId}`, matchData);
+    const patchMatch = async (matchId, matchData) => {
 
+        try {
+            await request.patch(`${baseUrl}/${matchId}`, matchData);
+            fetchMatch(matchId); // After patching, re-fetch the updated match
+        } catch (error) {
+            console.error("Error updating match:", error);
+        };
+
+        
+    }
+    
     return {
         patchMatch,
-    }
+    };
 }
-
