@@ -81,6 +81,21 @@ export default function MatchDetails() {
         fetchMatch(); // component update with new data
     }
 
+    const removePlayerClickHandler = async (playerId, teamType) => {
+        console.log(`Removing player ID: ${playerId} from ${teamType}`);
+    
+        if (!playerId) {
+            console.log("No player ID provided.");
+            return;
+        }
+    
+        let updatedTeam = match[teamType].filter(id => id !== playerId);
+    
+        await patchMatch(matchId, { [teamType]: updatedTeam });
+    
+        fetchMatch(); // Update UI after removal
+    };
+
     console.log('MATCH on init: ', match);
 
     return (
@@ -133,11 +148,11 @@ export default function MatchDetails() {
                             <ul className="list-none space-y-2">
                             {match?.homeTeam?.length > 0 && (
                                 <ul className="list-none space-y-2">
-                                    {match.homeTeam.map((player, index) => (
+                                    {match.homeTeam.map((playerId, index) => (
                                         <li key={index} className="flex items-center justify-between py-2 px-4 bg-gray-100 rounded-lg">
-                                            <span>{player}</span>
+                                            <span>{playerId}</span>
                                             {isOwner && (
-                                                <button className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Remove</button>
+                                                <button onClick={() => removePlayerClickHandler(playerId, "homeTeam")} className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Remove</button>
                                             )}
                                         </li>
                                     ))}
@@ -166,11 +181,11 @@ export default function MatchDetails() {
                             <ul className="list-none space-y-2">
                             {match?.awayTeam?.length > 0 && (
                                 <ul className="list-none space-y-2">
-                                    {match.awayTeam.map((player, index) => (
+                                    {match.awayTeam.map((playerId, index) => (
                                         <li key={index} className="flex items-center justify-between py-2 px-4 bg-gray-100 rounded-lg">
-                                            <span>{player}</span>
+                                            <span>{playerId}</span>
                                             {isOwner && (
-                                                <button className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Remove</button>
+                                                <button onClick={() => removePlayerClickHandler(playerId, "awayTeam")} className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Remove</button>
                                             )}
                                         </li>
                                     ))}
