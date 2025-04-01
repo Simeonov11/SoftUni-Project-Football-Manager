@@ -82,17 +82,17 @@ export default function MatchDetails() {
         clearSelectedPlayer();
     }
 
-    const removePlayerClickHandler = async (playerId, teamType) => {
-        console.log(`Removing player ID: ${playerId} from ${teamType}`);
+    const removePlayerClickHandler = async (playerId, teamSide) => {
+        console.log(`Removing player ID: ${playerId} from ${teamSide}`);
     
         if (!playerId) {
             console.log("No player ID provided.");
             return;
         }
     
-        let updatedTeam = match[teamType].filter(id => id !== playerId);
+        let updatedTeam = match[teamSide].filter(player => player.playerId !== playerId);
     
-        await patchMatch(matchId, { [teamType]: updatedTeam });
+        await patchMatch(matchId, { [teamSide]: updatedTeam });
     
         fetchMatch(); // Update UI after removal
     };
