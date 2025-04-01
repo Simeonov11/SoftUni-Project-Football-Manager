@@ -10,7 +10,7 @@ export default function Contacts() {
                         <p>Email: footballmanager@abv.bg</p>
                         <p>Facebook: footballmanager</p>
                         <p>Phone: 555-666-777</p>
-                        <p>Address: 55 Victoria Street, Sofia-Bulgaria</p>
+                        <p>Address: Sport Center General Kolev 82, Dobrich-Bulgaria</p>
                         {/* <img src="./images/map.jpg" alt="" className="rounded-lg mt-5" /> */}
                         <GoogleMap />
                     </article>

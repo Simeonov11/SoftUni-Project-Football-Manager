@@ -26,7 +26,7 @@ export default function Players() {
             <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
                 <div className="bg-white h-12 py-3">
                     <div className="content w-7xl text-center mx-auto">
-                        <input type="text" name="search" id="search" value={search} onChange={(e) => setSearch(e.target.value)} className="border-1  bg-gray-100 rounded-lg" placeholder="Search by ..." />
+                        <input type="text" name="search" id="search" value={search} onChange={(e) => setSearch(e.target.value)} className="border-1  bg-gray-100 rounded-lg px-2" placeholder="Search by ..." />
                         <a href="" className="bg-[#c6ff0a] hover:bg-green-300 rounded-lg mx-5 py-1 px-2 w-20">Search</a>
                     </div>
                 </div>

@@ -23,7 +23,7 @@ export default function CommentsCreate({
                         <div className="text-center mb-3">
                             <div className="text-center mb-3">
                                 <form className="form" action={commentAction}>
-                                    <textarea name="comment" id="comment" placeholder="Type your comment here..." className="border-1 bg-gray-100 rounded-lg w-175 h-20 mb-3"></textarea>
+                                    <textarea name="comment" id="comment" placeholder="Type your comment here..." className="border-1 bg-gray-100 rounded-lg w-175 h-20 mb-3 px-2"></textarea>
                                     <div className="text-center mb-3">
                                         <input className="btn bg-[#c6ff0a] hover:bg-green-300 rounded-lg py-1 px-2 mx-3" type="submit" value="Add"></input>
                                         {/* <button className="bg-[#c6ff0a] hover:bg-green-300 rounded-lg py-1 px-2 mx-3">Edit</button>
