@@ -32,7 +32,7 @@ export default function PlayerDetails() {
 
     return (
         <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
-            <div className="content w-3xl bg-white mx-auto p-2 rounded-lg">
+            <div className="content w-3xl bg-[rgba(255,255,255,0.9)] mx-auto p-2 rounded-lg">
                 <div className="flex">
                     <div className={`bg-no-repeat bg-contain bg-center w-75 h-100 text-lg m-7 ${getBackgroundClass(player.rating)}`}>
                         <div className="flex flex-col text-center">

@@ -39,7 +39,7 @@ export default function MatchCreate() {
     return (
        <>
             <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
-                <div className="contentCreate flex w-7xl bg-white rounded-lg mx-auto text-center justify-center p-5">
+                <div className="contentCreate flex w-7xl bg-[rgba(255,255,255,0.9)] rounded-lg mx-auto text-center justify-center p-5">
                     <form action={submitAction}>
                         <label htmlFor="startTimedate">Date:</label>
                         <input type="date" name="date" id="date" placeholder="2025/03/14" className="border-1 bg-gray-100 rounded-lg mx-5 px-2" />

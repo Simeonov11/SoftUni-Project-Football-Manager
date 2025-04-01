@@ -110,7 +110,7 @@ export default function MatchDetails() {
     return (
         <>
             <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
-                <div className="content w-7xl bg-white rounded-lg justify-center mx-auto pb-5">
+                <div className="content w-7xl bg-[rgba(255,255,255,0.9)] rounded-lg justify-center mx-auto pb-5">
                     <table className="table-auto mx-auto">
                         <thead>
                             <tr>
@@ -133,7 +133,7 @@ export default function MatchDetails() {
                     </table>
                 </div>
 
-                <div className="content w-7xl bg-white rounded-lg justify-center mx-auto mt-5">
+                <div className="content w-7xl bg-[rgba(255,255,255,0.9)] rounded-lg justify-center mx-auto mt-5">
                     <div className="flex justify-center p-3 my-2">
                         {playerId
                             ? ( <> <span className=" bg-gray-100 rounded-lg p-2 m-2">Selected Player : <span className="font-bold">{ `${playerFirstname} ${playerLastname}`}</span></span> </> )
@@ -144,7 +144,7 @@ export default function MatchDetails() {
 
                 <div className="w-5xl mx-auto mt-5">
                     <div className="grid grid-cols-3">
-                        <div className="bg-white rounded-lg mx-auto p-5 w-full max-w-md">
+                        <div className="bg-[rgba(255,255,255,0.9)] rounded-lg mx-auto p-5 w-full max-w-md">
                             <ul className="text-2xl text-center mb-5 flex items-center justify-between">
                                 <span>Home Team</span>
                                 {isOwner && (
@@ -169,7 +169,7 @@ export default function MatchDetails() {
                             )}
                             </ul>
                         </div>
-                        <div className="w-50 bg-white rounded-lg mx-auto p-5">
+                        <div className="w-50 bg-[rgba(255,255,255,0.9)] rounded-lg mx-auto p-5">
                             {isOwner && (
                                 <>
                                 <div className="text-center m-5"><Link to={`/matches/${matchId}/edit`} className="bg-[#c6ff0a] hover:bg-green-300 rounded-lg py-1 px-5">Edit</Link></div>
@@ -177,7 +177,7 @@ export default function MatchDetails() {
                                 </>
                             )}
                         </div>
-                        <div className="bg-white rounded-lg mx-auto p-5 w-full max-w-md">
+                        <div className="bg-[rgba(255,255,255,0.9)] rounded-lg mx-auto p-5 w-full max-w-md">
                             <ul className="text-2xl text-center mb-5 flex items-center justify-between">
                                 <span>Away Team</span>
                                 {isOwner && (
@@ -203,7 +203,7 @@ export default function MatchDetails() {
                             </ul>
                         </div>
                     </div>
-                    <div className="text-center bg-white rounded-lg mx-auto p-5 m-5"><span className=" bg-gray-100 rounded-lg p-2 m-2">{match.details}</span></div>
+                    <div className="text-center bg-[rgba(255,255,255,0.9)] rounded-lg mx-auto p-5 m-5"><span className=" bg-gray-100 rounded-lg p-2 m-2">{match.details}</span></div>
                 </div>
                 <CommentsShow comments={comments} />
                 <CommentsCreate

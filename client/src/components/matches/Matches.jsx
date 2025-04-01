@@ -22,7 +22,7 @@ export default function Matches() {
     return (
         <>
             <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
-                <div className="w-7xl bg-white rounded-lg justify-center mx-auto">
+                <div className="w-7xl bg-[rgba(255,255,255,0.9)] rounded-lg justify-center mx-auto">
                     <div className="p-2 text-center">
                         <label htmlFor="sortBy">Sort By:</label>
 
@@ -33,7 +33,7 @@ export default function Matches() {
                         </select>
                     </div>
                 </div>
-                <div className="content w-7xl bg-white rounded-lg flex justify-center mx-auto pb-3">
+                <div className="content w-7xl bg-[rgba(255,255,255,0.9)] rounded-lg flex justify-center mx-auto pb-3">
                     <table className="table-auto">
                         <thead>
                             <tr>

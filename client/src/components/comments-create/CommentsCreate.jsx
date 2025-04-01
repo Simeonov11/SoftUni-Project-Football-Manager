@@ -17,7 +17,7 @@ export default function CommentsCreate({
     return (
         <>
             <div className="comment-create flex flex-col">
-                <div className="w-200 bg-white rounded-lg mx-auto p-5">
+                <div className="w-200 bg-[rgba(255,255,255,0.9)] rounded-lg mx-auto p-5">
                     <div className="text-2xl text-center mb-5">Add new comment:</div>
                     <div className="flex flex-col">
                         <div className="text-center mb-3">

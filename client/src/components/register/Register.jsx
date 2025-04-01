@@ -59,7 +59,7 @@ export default function Register() {
     return (
         <>
             <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
-                <div className="content w-md bg-white mx-auto text-center p-5">
+                <div className="content w-md bg-[rgba(255,255,255,0.9)] mx-auto text-center p-5">
                     <form action={registerHandler} className="flex flex-col w-70 mx-auto">
                         <label>Username:</label>
                         <input type="text" name="username" id="username" placeholder="Johnny-boy" className="border-1 bg-gray-100 rounded-lg px-2" />
