@@ -28,14 +28,14 @@ export default function PlayerDetails() {
 
     return (
         <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
-            <div className="content w-3xl bg-white mx-auto p-2 border-1">
+            <div className="content w-3xl bg-white mx-auto p-2 rounded-lg">
                 <div className="flex">
-                    <div className="bg-[url('/images/bronze.png')] bg-no-repeat bg-contain bg-center w-75 h-100 border-1 text-lg m-7">
+                    <div className="bg-[url('/images/bronze.png')] bg-no-repeat bg-contain bg-center w-75 h-100 text-lg m-7">
                         <div className="flex flex-col text-center">
                             <img src={`${player.imageUrl}`} alt="" className="border-radius rounded-2xl w-45 h-57 mx-auto mt-9 mb-2" /><span>{player.firstName}</span><span>{player.lastName}</span><span>{player.position}</span><span>{player.rating}</span>
                         </div>
                     </div>
-                    <div className="w-100 h-100 border-1 text-lg m-7">
+                    <div className="w-100 h-100 border-1 rounded-lg text-lg m-7">
                         <div className="text-center pt-5">
                             <div className="p-2 m-2"><span className="p-2 m-5  bg-gray-100 rounded-lg">Age</span><span className="p-2 m-5 bg-gray-100 rounded-lg">Height</span><span className="p-2 m-5 bg-gray-100 rounded-lg">Weight</span></div>
                             <div><span className="p-5 mx-3">{player.age}</span><span className="p-5 mx-3 ">{player.height}</span><span className="p-5 mx-3">{player.weight}</span></div>
@@ -46,8 +46,8 @@ export default function PlayerDetails() {
                     </div>
                 </div>
                 <div className="text-center my-2">
-                    <Link to={`/players/${playerId}/edit`} className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-5 mx-5">Edit</Link>
-                    <button onClick={playerDeleteClickHandler} className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-3 mx-5">Delete</button>
+                    <Link to={`/players/${playerId}/edit`} className="bg-[#c6ff0a] hover:bg-green-300 rounded-lg py-1 px-5 mx-5">Edit</Link>
+                    <button onClick={playerDeleteClickHandler} className="bg-[#c6ff0a] hover:bg-green-300 rounded-lg py-1 px-3 mx-5">Delete</button>
                 </div>
             </div>
         </div>

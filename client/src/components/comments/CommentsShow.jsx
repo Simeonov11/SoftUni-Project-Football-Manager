@@ -3,8 +3,8 @@ export default function CommentsShow({
 }) {
     return (
         <>
-            <div className="comments-show flex flex-col mt-5">
-                <div className="w-200 bg-white mx-auto p-5">
+            <div className="comments-show flex flex-col pb-5 mt-5 rounded-lg">
+                <div className="w-200 bg-white rounded-lg mx-auto p-5">
                     {comments?.length > 0
                         ? comments.map(comment =>(
                             <ul className="text-md text-center mb-2 mx-3">

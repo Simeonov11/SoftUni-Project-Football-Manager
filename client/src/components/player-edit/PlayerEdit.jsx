@@ -25,7 +25,7 @@ export default function PlayerEdit() {
    return (
        <>
         <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
-            <div className="content w-md bg-white mx-auto text-center p-5">
+            <div className="content w-md bg-white rounded-lg mx-auto text-center p-5">
                 <form action={formAction} className="flex flex-col w-50 mx-auto">
                     <label htmlFor="firstName">First name:</label>
                     <input type="text" name="firstName" id="firstName" defaultValue={player.firstName} placeholder="John" className="border-1  bg-gray-100 rounded-lg" />
@@ -45,7 +45,7 @@ export default function PlayerEdit() {
                     <input type="text" name="weight" id="weight" defaultValue={player.weight} placeholder="60" className="border-1  bg-gray-100 rounded-lg" />
                     <label htmlFor="aboutMe">About me:</label>
                     <textarea id="aboutMe" name="aboutMe" defaultValue={player.aboutMe} placeholder="I love football" className="border-1 bg-gray-100 rounded-lg h-45 w-50"></textarea>
-                    <input type="submit" id="btn" value="Save" className="bg-[#c6ff0a] hover:bg-green-300 mx-auto w-20 py-1 px-5 mt-2" />
+                    <input type="submit" id="btn" value="Save" className="bg-[#c6ff0a] hover:bg-green-300 rounded-lg mx-auto w-20 py-1 px-5 mt-2" />
                 </form>
             </div>
         </div>
