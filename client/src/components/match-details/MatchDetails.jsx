@@ -197,12 +197,12 @@ export default function MatchDetails() {
                     </div>
                     <div className="w-250  bg-white mx-auto p-5 m-5">{match.details}</div>
                 </div>
+                <CommentsShow comments={comments} />
                 <CommentsCreate
                     username={username}
                     matchId={matchId}
                     onCreate={commentCreateHandler}
                 />
-                <CommentsShow comments={comments} />
             </div>
         </>
     );
