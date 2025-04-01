@@ -14,7 +14,7 @@ export default function MatchEdit() {
 
     const formAction = async (formData) => {
         const matchData = { ...match, ...(Object.fromEntries(formData)) };
-        
+        console.log(matchData);
         await edit(matchId, matchData)
 
         navigate(`/matches/${matchId}/details`);
