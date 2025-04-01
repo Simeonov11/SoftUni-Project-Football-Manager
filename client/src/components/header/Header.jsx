@@ -13,7 +13,7 @@ export default function Header() {
                     <ul className="flex justify-center text-xl">
                         <li><Link to="/" className="mx-auto flex items-center justify-center px-8 py-3 hover:bg-green-300 rounded-lg">Matches</Link></li>
                         <li><Link to="/players" className="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300 rounded-lg">Players</Link></li>
-                        <li><Link to="about" className="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300" rounded-lg>About</Link></li>
+                        <li><Link to="about" className="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300 rounded-lg">About</Link></li>
                         <li><Link to="contacts" className="mx-auto flex items-center justify-center px-3 py-3 hover:bg-green-300 rounded-lg">Contacts</Link></li>
                         {!isAuthenticated
                             ? (

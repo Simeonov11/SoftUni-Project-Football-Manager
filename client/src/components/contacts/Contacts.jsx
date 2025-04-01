@@ -4,7 +4,7 @@ export default function Contacts() {
             <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
                 <div className="content w-2xl bg-white rounded-lg mx-auto text-center p-5">
                     <article>
-                        <h1>Contact us on</h1>
+                        <h2 className="text-3xl">Contact us on</h2>
                         <p>Email: footballmanager@abv.bg</p>
                         <p>Facebook: footballmanager</p>
                         <p>Phone: 555-666-777</p>
