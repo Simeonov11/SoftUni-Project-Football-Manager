@@ -37,7 +37,7 @@ export default function Register() {
                         <input type="password" name="password" id="password" placeholder="" className="border-1 bg-gray-100 rounded-lg" />
                         <label>Repeat password:</label>
                         <input type="password" name="rePassword" id="rePassword" placeholder="" className="border-1 bg-gray-100 rounded-lg" />
-                        <input type="submit" id="btn" value="Register" className="bg-[#c6ff0a] hover:bg-green-300 mt-5 py-1 px-2 w-20 mx-auto" />
+                        <input type="submit" id="btn" value="Register" className="bg-[#c6ff0a] hover:bg-green-300 rounded-lg mt-5 py-1 px-2 w-20 mx-auto" />
                         <div className="mt-5 text-sm"><Link to="/login" className="py-1 px-5 hover:underline">I already have account</Link></div>
                     </form>
                 </div>
