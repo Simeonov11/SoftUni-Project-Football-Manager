@@ -12,6 +12,65 @@ export default function PlayerCreate() {
         playerData._ownerId = userId;
         playerData._username = username;
 
+        // Validation
+        // Check if any field is empty
+        if (!playerData.firstName || !playerData.lastName || !playerData.imageUrl || !playerData.position || !playerData.rating || !playerData.age || !playerData.height || !playerData.weight) {
+            alert('All fields are required.');
+            return;
+        }
+
+        // Validation for firstName and lastName (First letter capital, 3-15 characters, single word)
+        const nameRegex = /^[A-Z][a-zA-Z]{2,14}$/;
+        if (!nameRegex.test(playerData.firstName)) {
+            alert('First name must start with a capital letter, be a single word, and contain 3 to 15 letters.');
+            return;
+        }
+        if (!nameRegex.test(playerData.lastName)) {
+            alert('Last name must start with a capital letter, be a single word, and contain 3 to 15 letters.');
+            return;
+        }
+
+        // Validation for imageUrl (Must start with "http://" or "https://")
+        const imageUrlRegex = /^(http:\/\/|https:\/\/)/;
+        if (!imageUrlRegex.test(playerData.imageUrl)) {
+            alert('Image URL must start with "http://" or "https://".');
+            return;
+        }
+
+        // Validation for age (Digits only, minimum 10)
+        const ageRegex = /^\d+$/;
+        if (!ageRegex.test(playerData.age) || parseInt(playerData.age) < 10) {
+            alert('Age must be a number and at least 10.');
+            return;
+        }
+
+        // Validation for height (Digits only, max 3 digits, minimum 40)
+        const heightRegex = /^\d{2,3}$/;
+        if (!heightRegex.test(playerData.height) || parseInt(playerData.height) < 40) {
+            alert('Height must be a number, contain up to 3 digits, and be at least 40 cm.');
+            return;
+        }
+
+        // Validation for weight (Digits only, max 3 digits)
+        const weightRegex = /^\d{2,3}$/;
+        if (!weightRegex.test(playerData.weight)) {
+            alert('Weight must be a number and contain up to 3 digits.');
+            return;
+        }
+
+        // Validation for position (Required)
+        if (!playerData.position.trim()) {
+            alert('Position is required.');
+            return;
+        }
+
+        // Validation for rating (Decimal numbers from 1.0 to 10.0, only one decimal place allowed)
+        const ratingRegex = /^(10(\.0)?|[1-9](\.\d)?)$/;
+        if (!ratingRegex.test(playerData.rating) || parseFloat(playerData.rating) < 1.0 || parseFloat(playerData.rating) > 10.0) {
+            alert('Rating must be a number between 1.0 and 10.0 with only one decimal place.');
+            return;
+        }
+
         const result = await playerService.create(playerData);
         console.log(result);
         navigate('/players');
