@@ -1,17 +1,20 @@
 import MatchItem from "./match-item/MatchItem.jsx";
-import { useLatestMatches, useMatches } from "../../api/matchApi.js";
+import { useLatestMatches, useByUsernameMatches, useMatches } from "../../api/matchApi.js";
 import { useState } from "react";
 
 export default function Matches() {
     const { matches } = useMatches();
     const { latestMatches } = useLatestMatches();
+    const { byUsernameMatches } = useByUsernameMatches();
 
-    let matchList = latestMatches;
-
+    let matchList = matches;
+    
     const [sortBy, setSortBy] = useState("createdBy"); // Default to 'createdBy'
 
     if (sortBy === "date") {
         matchList = latestMatches; // Sort by date
+    } else if (sortBy === "_username") {
+        matchList = byUsernameMatches; // Sort by username
     } else {
         matchList = matches; // Sort by createdBy 
     }
@@ -24,9 +27,9 @@ export default function Matches() {
                         <label htmlFor="sortBy">Sort By:</label>
 
                         <select id="sortBy" defaultValue={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-                            <option value="">--option--</option>
-                            <option value="createdBy" selected>CreatedBy</option>
-                            <option value="date">Date</option>
+                            <option value="OnCreation selected">On creation</option>
+                            <option value="date">Latest date</option>
+                            <option value="_username">Username</option>
                         </select>
                     </div>
                 </div>

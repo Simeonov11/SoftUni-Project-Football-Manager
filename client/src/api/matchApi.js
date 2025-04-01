@@ -80,6 +80,29 @@ export const useLatestMatches = () => {
     };    
 };
 
+export const useByUsernameMatches = () => {
+    const [byUsernameMatches, setByUsernameMatches] = useState([]);
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams({
+            sortBy: '_username',
+        });
+
+        try {
+            request.get(`${baseUrl}?${searchParams.toString()}`)
+                .then(setByUsernameMatches)
+        } catch (error) {
+            console.log(`No matches found - ${error.message}`);
+            setByUsernameMatches([]);
+        }
+        
+    }, []);
+
+    return {
+        byUsernameMatches,
+    };    
+};
+
 export const useEditMatch = () => {
     const { request } = useAuth();
 
@@ -117,7 +140,7 @@ export const usePatchMatch = () => {
 
         
     }
-    
+
     return {
         patchMatch,
     };
