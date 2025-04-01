@@ -5,6 +5,7 @@ export default function GuestGuard() {
     const { isAuthenticated } = useAuth();
 
     if (isAuthenticated) {
+        console.log('You must be logged out to access this page.');
         return <Navigate to="/" />
     }
 
