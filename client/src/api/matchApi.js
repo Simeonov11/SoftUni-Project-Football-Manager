@@ -49,7 +49,7 @@ export const useMatch = (matchId) => {
     useEffect(() => {
         fetchMatch();
 
-    }, [matchId]);
+    }, []);
 
     return {
         match,
