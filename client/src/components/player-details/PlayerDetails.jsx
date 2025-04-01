@@ -37,11 +37,11 @@ export default function PlayerDetails() {
                     </div>
                     <div className="w-100 h-100 border-1 text-lg m-7">
                         <div className="text-center pt-5">
-                            <div><span className="p-5">Age</span><span className="p-5">Height</span><span className="p-5">Weight</span></div>
-                            <div><span className="p-5 mx-3">{player.age}</span><span className="p-5 mx-3">{player.height}</span><span className="p-5 mx-3">{player.weight}</span></div>
+                            <div className="p-2 m-2"><span className="p-2 m-5  bg-gray-100 rounded-lg">Age</span><span className="p-2 m-5 bg-gray-100 rounded-lg">Height</span><span className="p-2 m-5 bg-gray-100 rounded-lg">Weight</span></div>
+                            <div><span className="p-5 mx-3">{player.age}</span><span className="p-5 mx-3 ">{player.height}</span><span className="p-5 mx-3">{player.weight}</span></div>
                         </div>
-                        <div className="text-center pt-10">
-                            <p className="border-1 w-85 h-60 mx-auto p-2 mt-5">{player.aboutMe}</p>
+                        <div className="text-center pt-5">
+                            <p className="border-1 w-85 h-60 mx-auto p-2 mt-5  bg-gray-100 rounded-lg">{player.aboutMe}</p>
                         </div>
                     </div>
                 </div>

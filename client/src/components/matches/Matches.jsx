@@ -37,11 +37,11 @@ export default function Matches() {
                     <table className="table-auto">
                         <thead>
                             <tr>
-                                <th className="w-60 px-5 py-2">Date</th>
-                                <th className="w-30 px-5 py-2">Start Time</th>
-                                <th className="w-80 px-5 py-2">Username</th>
-                                <th className="w-30 px-5 py-2">Status</th>
-                                <th className="w-30 px-5 py-2">Players</th>
+                                <th className=" bg-gray-100 rounded-lg w-60 px-5 py-2">Date</th>
+                                <th className=" bg-gray-100 rounded-lg w-30 px-5 py-2">Start Time</th>
+                                <th className=" bg-gray-100 rounded-lg w-80 px-5 py-2">Username</th>
+                                <th className=" bg-gray-100 rounded-lg w-30 px-5 py-2">Status</th>
+                                <th className=" bg-gray-100 rounded-lg w-30 px-5 py-2">Players</th>
                             </tr>
                         </thead>
                         <tbody>

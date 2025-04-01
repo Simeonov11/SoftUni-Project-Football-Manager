@@ -64,18 +64,22 @@ export default function MatchDetails() {
 
         if (!playerId) {
             console.log('No player selected');
-            return;
         }
     
         console.log('Adding player:', playerFirstname, playerLastname);
         
+        // geting count value
+        const newCountValue = Number(match._count) + 1;
+        console.log('newCoutValue ---> ',newCountValue);
+
+
         let updatedTeam;
         if (team === "homeTeam") {
             updatedTeam = [...match.homeTeam, { playerId: playerId, teamSide: team, playerFirstname: playerFirstname, playerLastname: playerLastname }];
-            await patchMatch(matchId, { homeTeam: updatedTeam });
+            await patchMatch(matchId, { homeTeam: updatedTeam, _count: newCountValue });
         } else if (team === "awayTeam") {
             updatedTeam = [...match.awayTeam, { playerId: playerId, teamSide: team, playerFirstname: playerFirstname, playerLastname: playerLastname }];
-            await patchMatch(matchId, { awayTeam: updatedTeam });
+            await patchMatch(matchId, { awayTeam: updatedTeam, _count: newCountValue });
         }
 
         fetchMatch(); // component update with new data
@@ -84,6 +88,10 @@ export default function MatchDetails() {
 
     const removePlayerClickHandler = async (playerId, teamSide) => {
         console.log(`Removing player ID: ${playerId} from ${teamSide}`);
+
+        // geting count value
+        const newCountValue = Number(match._count) - 1;
+        console.log('newCoutValue ---> ',newCountValue);
     
         if (!playerId) {
             console.log("No player ID provided.");
@@ -92,8 +100,8 @@ export default function MatchDetails() {
     
         let updatedTeam = match[teamSide].filter(player => player.playerId !== playerId);
     
-        await patchMatch(matchId, { [teamSide]: updatedTeam });
-    
+        await patchMatch(matchId, { [teamSide]: updatedTeam, _count: newCountValue });
+
         fetchMatch(); // Update UI after removal
     };
 
@@ -115,11 +123,11 @@ export default function MatchDetails() {
                         </thead>
                         <tbody>
                             <tr>
-                                <td className="w-60 px-5 py-2 text-center">{fromIsoDate(match.date)}</td>
-                                <td className="w-30 px-5 py-2 text-center">{match.startTime}</td>
-                                <td className="w-80 px-5 py-2 text-center">{match._username}</td>
-                                <td className="w-30 px-5 py-2 text-center">{match._status}</td>
-                                <td className="w-30 px-5 py-2 text-center">{match._count}/10</td>
+                                <td className=" bg-gray-100 rounded-lg w-60 px-5 py-2 text-center">{fromIsoDate(match.date)}</td>
+                                <td className=" bg-gray-100 rounded-lg w-30 px-5 py-2 text-center">{match.startTime}</td>
+                                <td className=" bg-gray-100 rounded-lg w-80 px-5 py-2 text-center">{match._username}</td>
+                                <td className=" bg-gray-100 rounded-lg w-30 px-5 py-2 text-center">{match._status}</td>
+                                <td className=" bg-gray-100 rounded-lg w-30 px-5 py-2 text-center">{match._count}/10</td>
                             </tr>
                         </tbody>
                     </table>
@@ -128,8 +136,8 @@ export default function MatchDetails() {
                 <div className="content w-7xl bg-white justify-center mx-auto">
                     <div className="flex justify-center p-3 my-2">
                         {playerId
-                            ? (`Selected Player : ${playerFirstname} ${playerLastname}`)
-                            : ("No Player Selected")
+                            ? ( <> <span className=" bg-gray-100 rounded-lg p-2 m-2">Selected Player : <span className="font-bold">{ `${playerFirstname} ${playerLastname}`}</span></span> </> )
+                            : ( <span className=" bg-gray-100 rounded-lg p-2 m-2">No Player Selected</span> )
                         }
                     </div>
                 </div>
@@ -195,7 +203,7 @@ export default function MatchDetails() {
                             </ul>
                         </div>
                     </div>
-                    <div className="w-250  bg-white mx-auto p-5 m-5">{match.details}</div>
+                    <div className="text-center bg-white mx-auto p-5 m-5"><span className=" bg-gray-100 rounded-lg p-2 m-2">{match.details}</span></div>
                 </div>
                 <CommentsShow comments={comments} />
                 <CommentsCreate

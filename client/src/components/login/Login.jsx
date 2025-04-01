@@ -29,11 +29,11 @@ export default function Login() {
                 <div className="content w-md bg-white mx-auto text-center p-5">
                     <form action={loginAction} className="flex flex-col w-70 mx-auto">
                         <label htmlFor="email">Email:</label>
-                        <input type="text" name="email" id="email" placeholder="John@abv.bg" className="border-1" />
+                        <input type="text" name="email" id="email" placeholder="John@abv.bg" className="border-1 bg-gray-100 rounded-lg" />
                         <label htmlFor="password">Password:</label>
-                        <input type="password" name="password" id="password" placeholder="" className="border-1" />
+                        <input type="password" name="password" id="password" placeholder="" className="border-1 bg-gray-100 rounded-lg" />
                         <input type="submit" id="btn" value="Login" disabled={isPending} className="bg-[#c6ff0a] hover:bg-green-300 mt-5 py-1 px-1 w-20 mx-auto" />
-                        <div className="mt-5 text-sm"><Link to="/register" className="py-1 px-5">Not registered yet?</Link></div>
+                        <div className="mt-5 text-sm"><Link to="/register" className="py-1 px-5 hover:underline">Not registered yet?</Link></div>
                     </form>
                 </div>
             </div>

@@ -19,7 +19,7 @@ export default function Players() {
             <div className="grid auto-rows-max grid-flow-rows bg-[url('/images/Futsal_Commercial-1.jpg')] bg-no-repeat bg-cover min-h-195 bg-center py-5">
                 <div className="bg-white h-12 py-3">
                     <div className="content w-7xl text-center mx-auto">
-                        <input type="text" name="search" id="search" className="border-1" />
+                        <input type="text" name="search" id="search" className="border-1  bg-gray-100 rounded-lg" />
                         <a href="" className="bg-[#c6ff0a] hover:bg-green-300 mx-5 py-1 px-2 w-20">Search</a>
                     </div>
                 </div>

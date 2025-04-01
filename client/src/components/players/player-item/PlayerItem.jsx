@@ -18,7 +18,7 @@ export default function PlayerItem({
     };
     
     return (
-        <div className="bg-[url('/images/bronze.png')] bg-no-repeat bg-contain bg-center w-35 h-50 border-1 text-sm m-7 mx-auto">
+        <div className="bg-[url('/images/bronze.png')] bg-no-repeat bg-contain bg-center w-35 h-50 text-sm m-7 mx-auto">
             <div className="flex flex-col text-center">
                 <img src={`${imageUrl}`} alt="" className="border-radius rounded-md w-20 h-24 mx-auto mt-4" /><span>{firstName}</span><span>{lastName}</span><span>{position}</span><span>{rating}</span>
             </div>

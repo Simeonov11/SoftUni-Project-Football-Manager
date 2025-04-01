@@ -5,7 +5,7 @@ import { useUserContext } from "../../contexts/UserContext.jsx";
 export default function Register() {
     const navigate = useNavigate();
     const { register } = useRegister();
-    const { userLoginHandler } = useUserContext
+    const { userLoginHandler } = useUserContext();
 
     const registerHandler = async (formData) => {
         const { username, email, password, rePassword } = Object.fromEntries(formData);
@@ -18,7 +18,7 @@ export default function Register() {
         }
 
         const authData = await register(username, email, password);
-
+        
         userLoginHandler(authData);
 
         navigate('/');
@@ -30,15 +30,15 @@ export default function Register() {
                 <div className="content w-md bg-white mx-auto text-center p-5">
                     <form action={registerHandler} className="flex flex-col w-70 mx-auto">
                         <label>Username:</label>
-                        <input type="text" name="username" id="username" placeholder="Johnny-boy" className="border-1" />
+                        <input type="text" name="username" id="username" placeholder="Johnny-boy" className="border-1 bg-gray-100 rounded-lg" />
                         <label>Email:</label>
-                        <input type="text" name="email" id="email" placeholder="john@abv.bg" className="border-1" />
+                        <input type="text" name="email" id="email" placeholder="john@abv.bg" className="border-1 bg-gray-100 rounded-lg" />
                         <label>Password:</label>
-                        <input type="password" name="password" id="password" placeholder="" className="border-1" />
+                        <input type="password" name="password" id="password" placeholder="" className="border-1 bg-gray-100 rounded-lg" />
                         <label>Repeat password:</label>
-                        <input type="password" name="rePassword" id="rePassword" placeholder="" className="border-1" />
+                        <input type="password" name="rePassword" id="rePassword" placeholder="" className="border-1 bg-gray-100 rounded-lg" />
                         <input type="submit" id="btn" value="Register" className="bg-[#c6ff0a] hover:bg-green-300 mt-5 py-1 px-2 w-20 mx-auto" />
-                        <div className="mt-5 text-sm"><Link to="/login" className="py-1 px-5">I already have account</Link></div>
+                        <div className="mt-5 text-sm"><Link to="/login" className="py-1 px-5 hover:underline">I already have account</Link></div>
                     </form>
                 </div>
             </div>
