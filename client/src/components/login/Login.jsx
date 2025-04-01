@@ -12,6 +12,26 @@ export default function Login() {
     const loginHandler = async (_previousState, formData) => {
         const values = Object.fromEntries(formData);
 
+        // Validation empty fields
+        if (values.email.trim() === '' || values.password.trim() === '') {
+            alert('Fields are required');
+            return;
+        }
+
+        // Email format validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(values.email)) {
+            alert('Enter a valid email address');
+            return;
+        }
+
+        // Password length validation
+        if (values.password.length < 5) {
+            alert('Password must be at least 5 characters long');
+            return;
+        }
+
+
         const authData = await login(values.email, values.password);
 
         userLoginHandler(authData);
