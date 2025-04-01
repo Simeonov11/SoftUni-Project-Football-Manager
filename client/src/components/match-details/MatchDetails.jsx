@@ -71,10 +71,10 @@ export default function MatchDetails() {
         
         let updatedTeam;
         if (team === "homeTeam") {
-            updatedTeam = [...match.homeTeam, playerId];
+            updatedTeam = [...match.homeTeam, { playerId: playerId, teamSide: team, playerFirstname: playerFirstname, playerLastname: playerLastname }];
             await patchMatch(matchId, { homeTeam: updatedTeam });
         } else if (team === "awayTeam") {
-            updatedTeam = [...match.awayTeam, playerId];
+            updatedTeam = [...match.awayTeam, { playerId: playerId, teamSide: team, playerFirstname: playerFirstname, playerLastname: playerLastname }];
             await patchMatch(matchId, { awayTeam: updatedTeam });
         }
 
@@ -148,9 +148,9 @@ export default function MatchDetails() {
                             <ul className="list-none space-y-2">
                             {match?.homeTeam?.length > 0 && (
                                 <ul className="list-none space-y-2">
-                                    {match.homeTeam.map((playerId, index) => (
+                                    {match.homeTeam.map(( {playerId, playerFirstname, playerLastname} , index) => (
                                         <li key={index} className="flex items-center justify-between py-2 px-4 bg-gray-100 rounded-lg">
-                                            <span>{playerId}</span>
+                                            <span>{playerFirstname} {playerLastname}</span>
                                             {isOwner && (
                                                 <button onClick={() => removePlayerClickHandler(playerId, "homeTeam")} className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Remove</button>
                                             )}
@@ -181,9 +181,9 @@ export default function MatchDetails() {
                             <ul className="list-none space-y-2">
                             {match?.awayTeam?.length > 0 && (
                                 <ul className="list-none space-y-2">
-                                    {match.awayTeam.map((playerId, index) => (
+                                    {match.awayTeam.map(( {playerId, playerFirstname, playerLastname} , index) => (
                                         <li key={index} className="flex items-center justify-between py-2 px-4 bg-gray-100 rounded-lg">
-                                            <span>{playerId}</span>
+                                            <span>{playerFirstname} {playerLastname}</span>
                                             {isOwner && (
                                                 <button onClick={() => removePlayerClickHandler(playerId, "awayTeam")} className="text-base bg-[#c6ff0a] hover:bg-green-300 py-1 px-3">Remove</button>
                                             )}
