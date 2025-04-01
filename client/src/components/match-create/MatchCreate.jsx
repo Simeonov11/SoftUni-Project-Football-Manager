@@ -14,7 +14,15 @@ export default function MatchCreate() {
         const hours = matchData.startTime.slice(0,2);
         
         matchData.date.setUTCHours(hours);
-        console.log(matchData);
+        // console.log(matchData);
+
+        // Validation for startTime (format HH:MM)
+        const timeRegex = /^([0-9]{2}):([0-9]{2})$/;
+
+        if (!timeRegex.test(matchData.startTime)) {
+            alert('Please enter a valid start time in the format HH:MM (e.g., 01:00).');
+            return;
+        }
         
         matchData._username = username;
         matchData._status = "Open";
