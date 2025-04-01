@@ -10,10 +10,42 @@ export default function Register() {
     const registerHandler = async (formData) => {
         const { username, email, password, rePassword } = Object.fromEntries(formData);
 
-        if (password !== rePassword) {
-            // TODO: error message
-            console.log('Password missmatch');
+        // Validation
+        if (!username.trim() || !email.trim() || !password.trim() || !rePassword.trim()) {
+            alert('All fields are required');
+            return;
+        }
 
+        // Username validation (minimum 3 characters, no special characters)
+        const usernameRegex = /^[a-zA-Z0-9_]{3,}$/;
+        if (!usernameRegex.test(username)) {
+            alert('Username must be at least 3 characters long and contain only letters, numbers, or underscores.');
+            return;
+        }
+
+        // Email format validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Enter a valid email address');
+            return;
+        }
+
+        // Password length validation (minimum 5 characters)
+        if (password.length < 5) {
+            alert('Password must be at least 5 characters long');
+            return;
+        }
+
+        // Password strength validation (at least one uppercase letter, one number, and one special character)
+        // const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+        // if (!passwordRegex.test(password)) {
+        //     alert('Password must contain at least one uppercase letter, one number, and one special character.');
+        //     return;
+        // }
+
+        // Confirm password validation
+        if (password !== rePassword) {
+            alert('Passwords do not match');
             return;
         }
 
