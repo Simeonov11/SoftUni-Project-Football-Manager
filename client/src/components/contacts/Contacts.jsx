@@ -1,3 +1,5 @@
+import GoogleMap from "../googlemaps-location/GoogleMapsLocation";
+
 export default function Contacts() {
     return (
         <>
@@ -9,7 +11,8 @@ export default function Contacts() {
                         <p>Facebook: footballmanager</p>
                         <p>Phone: 555-666-777</p>
                         <p>Address: 55 Victoria Street, Sofia-Bulgaria</p>
-                        <img src="./images/map.jpg" alt="" className="rounded-lg mt-5" />
+                        {/* <img src="./images/map.jpg" alt="" className="rounded-lg mt-5" /> */}
+                        <GoogleMap />
                     </article>
                 </div>
             </div>
