@@ -21,8 +21,16 @@ export default function MatchInfoProvider({
         setPlayerLastname(playerLastname);
     };
 
+    const clearSelectedPlayer = () => {
+        setMatchId(null);
+        setTeam(null);
+        setPlayerId(null);
+        setPlayerFirstname(null);
+        setPlayerLastname(null);
+    };
+
     return (
-        <MatchInfoContext.Provider value={{ matchId, team, playerId, playerFirstname, playerLastname, selectMatch, selectPlayer }}>
+        <MatchInfoContext.Provider value={{ matchId, team, playerId, playerFirstname, playerLastname, selectMatch, selectPlayer, clearSelectedPlayer }}>
             {children}
         </MatchInfoContext.Provider>
     );

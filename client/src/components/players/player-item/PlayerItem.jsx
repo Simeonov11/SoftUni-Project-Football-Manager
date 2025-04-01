@@ -24,7 +24,7 @@ export default function PlayerItem({
             </div>
             <div className="text-center mt-2">
                 <Link to={`/players/${_id}/details`} className="bg-[#c6ff0a] hover:bg-green-300 py-1 px-2">Details</Link>
-                <button onClick={SelectPlayerClickHandler} className=" bg-[#c6ff0a] hover:bg-green-300 py-1 px-2 mx-3">Add</button>
+                {matchId && (<button onClick={SelectPlayerClickHandler} className=" bg-[#c6ff0a] hover:bg-green-300 py-1 px-2 mx-3">Add</button>)}
             </div>
         </div>
     );

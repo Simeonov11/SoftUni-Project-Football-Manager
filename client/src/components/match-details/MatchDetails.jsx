@@ -19,7 +19,7 @@ export default function MatchDetails() {
     // const { create } = useCreateComment();
     const { deleteMatch } = useDeleteMatch();
     const { patchMatch } = usePatchMatch();
-    const { selectMatch, team, playerId, playerFirstname, playerLastname } = useMatchInfoContext();
+    const { selectMatch, clearSelectedPlayer, team, playerId, playerFirstname, playerLastname } = useMatchInfoContext();
 
 
     useEffect(() => {
@@ -79,6 +79,7 @@ export default function MatchDetails() {
         }
 
         fetchMatch(); // component update with new data
+        clearSelectedPlayer();
     }
 
     const removePlayerClickHandler = async (playerId, teamType) => {
