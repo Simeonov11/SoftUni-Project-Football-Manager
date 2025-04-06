@@ -52,7 +52,13 @@ export default function Login() {
                         <input type="text" name="email" id="email" placeholder="John@abv.bg" className="border-1 bg-gray-100 rounded-lg px-2" />
                         <label htmlFor="password">Password:</label>
                         <input type="password" name="password" id="password" placeholder="" className="border-1 bg-gray-100 rounded-lg px-2" />
-                        <input type="submit" id="btn" value="Login" disabled={isPending} className="bg-[#c6ff0a] hover:bg-green-300 rounded-lg mt-5 py-1 px-1 w-20 mx-auto" />
+                        <input type="submit" id="btn" value="Login" 
+                            disabled={isPending} 
+                            className={`${isPending
+                                ? "bg-gray-500 cursor-not-allowed" 
+                                : "bg-[#c6ff0a] hover:bg-green-300"
+                            } 
+                            rounded-lg mt-5 py-1 px-1 w-20 mx-auto`} />
                         <div className="mt-5 text-sm"><Link to="/register" className="py-1 px-5 hover:underline">Not registered yet?</Link></div>
                     </form>
                 </div>
