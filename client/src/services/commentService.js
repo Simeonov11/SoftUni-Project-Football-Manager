@@ -1,7 +1,7 @@
 import request from "../utils/request.js";
 
-
-const baseUrl = 'http://localhost:3030/jsonstore/comments';
+const baseUrl = import.meta.env.VITE_BASE_URL + '/comments' || 'http://localhost:3030/jsonstore/comments';
+// const baseUrl = 'http://localhost:3030/jsonstore/comments';
 
 export default {  
     async getAll(matchId) {

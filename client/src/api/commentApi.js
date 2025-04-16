@@ -2,7 +2,8 @@
 import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth.js";
 
-const baseUrl = 'http://localhost:3030/data/comments';
+const baseUrl = import.meta.env.VITE_BASE_URL + '/data/comments' || 'http://localhost:3030/data/comments';
+// const baseUrl = 'http://localhost:3030/data/comments';
 
 export const useComments = (matchId) => {
     const { request } = useAuth();

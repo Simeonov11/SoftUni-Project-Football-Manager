@@ -1,7 +1,7 @@
 import request from "../utils/request.js";
 
-
-const baseUrl = 'http://localhost:3030/jsonstore/players';
+const baseUrl = import.meta.env.VITE_BASE_URL + '/players' || 'http://localhost:3030/jsonstore/players';
+// const baseUrl = 'http://localhost:3030/jsonstore/players';
 
 export default {
     async getOne(playerId) {

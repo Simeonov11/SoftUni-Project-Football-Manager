@@ -2,8 +2,8 @@ import { useContext, useEffect, useRef } from "react";
 import request from "../utils/request.js"
 import { UserContext } from "../contexts/UserContext.jsx";
 
-
-const baseUrl = 'http://localhost:3030/users';
+const baseUrl = import.meta.env.VITE_BASE_URL + '/users' || 'http://localhost:3030/users';
+// const baseUrl = 'http://localhost:3030/users';
 
 export const useLogin = () => {
     const abortRef = useRef(new AbortController());

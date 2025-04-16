@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import request from "../utils/request.js";
 import useAuth from "../hooks/useAuth.js";
 
-
-const baseUrl = 'http://localhost:3030/data/matches';
+const baseUrl = import.meta.env.VITE_BASE_URL + '/data/matches' || 'http://localhost:3030/data/matches';
+// const baseUrl = 'http://localhost:3030/data/matches';
 
 export const useCreateMatch = () => {
     const { request } = useAuth();
