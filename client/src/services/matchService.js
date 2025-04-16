@@ -1,6 +1,6 @@
 import request from "../utils/request.js";
 
-const baseUrl = import.meta.env.VITE_BASE_URL + '/matches' || 'http://localhost:3030/jsonstore/matches';
+const baseUrl = import.meta.env.VITE_BASE_URL + '/jsonstore/matches' || 'http://localhost:3030/jsonstore/matches';
 // const baseUrl = 'http://localhost:3030/jsonstore/matches';
 
 export default {
